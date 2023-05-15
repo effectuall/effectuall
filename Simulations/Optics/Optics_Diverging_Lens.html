@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
+  <title>Diverging Lens with Interactive 3D Simulations</title>
+  <link rel="stylesheet" type="text/css" href="/css/page-style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+
+<body>
+  <div id="container">
+    <div class="topnav" id="myTopnav">
+      <a href="../index.html" > <img src="/effectuall.svg" class="title" alt="Effectual logo"></a>
+      <a href="../Simulations.html">Simulations</a>
+      <a href="#news">News</a>
+      <a href="#contact">Contact</a>
+      <a href="#about">About</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></a>
+    </div>
+    <div id="app">
+      <div>
+        <h3>Diverging Lens with Interactive 3D Simulations</h3>
+      </div> 
+    </div>
+    <div id="aSide">
+      <h1>Content in Development </h1>
+      <!-- <iframe src="/src/microscope.html" name="iframe" title="Iframe Display"></iframe>
+      <a id="viewButton" onclick="viewFunction()"><i class="fa fa-expand" aria-hidden="true"></i></a> -->
+      <div>
+        <a href="../Simulations.html" ><button>Go Back</button></a>
+        <h2>404</h2>
+        <h1>Page not found</h1>
+      </div>  
+    </div>
+      
+    <div id="part2" class="content">
+      <h2>Image Formation with Converging Lens</h2>
+      <p><strong>Description</strong></p>
+      <p>For simulation of image formation in concave lenses. Use the control menu, to change the lens <strong>focus</strong>,  to move the <strong> object</strong>  and adjust the object <strong>height</strong>.  
+      </p> 
+      <p>Observe that the focal length is negative here. </p>
+        <h2>Lens Formula </h2>
+        <p> $$\frac{1}{f} = \frac{1}{v}-\frac{1}{u} $$ 
+          \[\text{or}\]
+          $$\frac{1}{v} = \frac{1}{f}+\frac{1}{u} $$
+          <dl>
+            <dt>
+                &#160; &#xa0; &#10148; Focal length of concave lens (diverging lens) are negative.
+           </dt>
+       </dl>
+       <dl>
+        <dt>
+            &#160; &#xa0; &#10148; Image through the concave lens is always virtual and erect.     
+       </dt>
+        </dl>
+        </p>
+        <h2>Magnification</h2>  
+        $$m=\frac{v}{u} $$
+        <dl>
+          <dt>
+              &#160; &#xa0; &#10148; Magnification is less than is 1.     
+         </dt>
+        </dl> 
+        </div>   
+      <div style="text-align: center;" id="counterCard">
+        ___________________
+        <p id="footer"></p>
+        <p id="email"></p>
+      </div>
+  </div>
+    <script>
+    let x = document.getElementById("myTopnav");
+    function myFunction() {
+
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+    window.onscroll = function () { myFun() };
+
+let navbar = document.getElementById("navbar");
+let sticky = x.offsetTop;
+
+function myFun() {
+  if (window.pageYOffset >= sticky) {
+    x.classList.add("sticky")
+  } else {
+    x.classList.remove("sticky");
+  }
+}
+ </script>
+  <script type="importmap">
+          {
+            "imports": {
+              "three": "../build/three.module.js",
+              "three/addons/": "./jsm/"
+            }
+          }
+        </script>
+  <script type="module" src="../src/footer.js"></script>
+</body>
+
+</html>
