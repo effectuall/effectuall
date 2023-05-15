@@ -1,0 +1,64 @@
+html {
+    box-sizing: border-box;
+    
+  }
+  
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+    
+  }
+  
+  body {
+    
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  .annotation {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    padding: 1em;
+    width: 250px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: .5em;
+    font-size: 12px;
+    line-height: 1.2;
+    transition: opacity .5s;
+    overflow-y: auto;
+  }
+  #menu {
+    position: fixed;
+    float: bottom;
+    bottom: 20px;
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+    margin-bottom: -20px;
+    
+  }
+  
+  button {
+    color: rgba(253, 251, 251, 0.75);
+    background: rgb(3, 108, 156);
+    outline: 1px solid rgba(3, 10, 36, 0.75);
+    border: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  @media only screen and (max-width:500px) {
+   
+    
+    .annotation {
+      display: none;
+      
+    }
+  }
