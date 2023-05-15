@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="197.28717mm"
+   height="110.61257mm"
+   viewBox="0 0 197.28717 110.61256"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   sodipodi:docname="logo2.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:snap-bbox="true"
+     inkscape:bbox-nodes="true"
+     inkscape:snap-bbox-edge-midpoints="true"
+     inkscape:zoom="0.41799165"
+     inkscape:cx="588.5285"
+     inkscape:cy="49.044042"
+     inkscape:window-width="1366"
+     inkscape:window-height="705"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <rect
+       x="1964.918"
+       y="384.05215"
+       width="1511.3748"
+       height="41.772331"
+       id="rect13718" />
+    <rect
+       x="651.92487"
+       y="71.236824"
+       width="572.05328"
+       height="1025.3785"
+       id="rect32454" />
+    <rect
+       x="41.015141"
+       y="341.0733"
+       width="651.92487"
+       height="276.31253"
+       id="rect2432" />
+    <rect
+       x="41.015141"
+       y="341.0733"
+       width="651.92487"
+       height="276.31253"
+       id="rect2432-0" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(17.948417,0.982932)">
+    <g
+       id="g36225"
+       transform="matrix(0.65973694,0,0,0.65973694,14.721471,-4.2816167)">
+      <path
+         id="rect10372"
+         style="fill:#00b3b3;fill-opacity:1;stroke:none;stroke-width:2"
+         d="M 100,5 160,30 100,65 40,30 Z"
+         sodipodi:nodetypes="ccccc" />
+      <path
+         id="rect10372-6"
+         style="fill:#009292;fill-opacity:1;stroke:none;stroke-width:2"
+         d="M 100,65 160,30 V 95.561537 L 100,130.40192 Z"
+         sodipodi:nodetypes="ccccc" />
+      <path
+         id="path10892"
+         style="fill:#008080;fill-opacity:1;stroke:none;stroke-width:2"
+         d="M 100,65 40,30 v 65.561537 l 60,34.840383 z"
+         sodipodi:nodetypes="ccccc" />
+      <text
+         xml:space="preserve"
+         transform="matrix(1.1036111,0,0,0.97387257,10.86616,-317.17339)"
+         id="text2430"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:96px;line-height:1.15;font-family:Impact;-inkscape-font-specification:Impact;white-space:pre;shape-inside:url(#rect2432)"><tspan
+           x="41.015625"
+           y="432.37811"
+           id="tspan43695"><tspan
+             style="font-stretch:condensed;-inkscape-font-specification:'Impact Condensed';fill:#ffffff"
+             id="tspan43693">EL</tspan></tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       transform="matrix(1.1036111,0,0,0.97387257,-64.322738,-253.85943)"
+       id="text2430-2"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24.5005px;line-height:1.65;font-family:Impact;-inkscape-font-specification:Impact;white-space:pre;shape-inside:url(#rect2432-0);fill:#00b3b3;fill-opacity:1"><tspan
+         x="41.015625"
+         y="370.50133"
+         id="tspan43697">Effectual Learning</tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,40,5)"
+       id="text13716"
+       style="font-size:40px;line-height:1.25;font-family:serif;-inkscape-font-specification:serif;white-space:pre;shape-inside:url(#rect13718)" />
+  </g>
+</svg>
