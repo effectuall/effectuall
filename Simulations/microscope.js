@@ -41,7 +41,7 @@ function init() {
 
     const loader = new GLTFLoader();
     loader
-        .setPath('./model/')
+        .setPath('model/')
         .load('microscope.glb', function (gltf) {
             model = gltf.scene;
             for (let i = 0; i < model.children.length; i++) {
@@ -471,7 +471,7 @@ function addLens(radius) {
 
 function eyeShow() {
 
-    const map1 = new THREE.TextureLoader().load('assets/img/eyeIconUp.png');
+    const map1 = new THREE.TextureLoader().load('img/eyeIconUp.png');
     const material1 = new THREE.SpriteMaterial({ map: map1, color: 0xffffff });
 
     let eye = new THREE.Sprite(material1);
