@@ -1,9 +1,7 @@
-export function setupCounter(element) {
-  let counter = 0
-  const setCounter = (count) => {
-    counter = count
-    element.innerHTML = `count is ${counter}`
-  }
-  element.addEventListener('click', () => setCounter(counter + 1))
-  setCounter(0)
-}
+const footer = document.getElementById("footer");
+const email = document.getElementById("email");
+footer.innerText = "Content still in development. The interactive 3D simulation created using open source Three.js-JavaScript 3D Library. "+
+'© Copyright 2020 by E.P Sajitha (Ph.D). All rights reversed. ' +
+'  Any suggestion appreciated. '
+email.innerText = ' Email: effectuallearning@gmail.com '
+
