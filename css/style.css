@@ -53,7 +53,7 @@ h2,h3 {
   display: block;
   color: #f2f2f2;
   text-align: center;
-  padding: 14px 26px;
+  padding: 14px 30px;
   text-decoration: none;
   font-size: 17px;
   height: 2em;
@@ -124,7 +124,7 @@ h2,h3 {
 #aSide iframe {
   /* height: 600px;
      width: 100%; */
-  height: 500px;
+  height: 750px;
   width: 70%;
   padding: 10px 10px;
   border: none;
@@ -139,7 +139,7 @@ h2,h3 {
 #app {
 
   margin: 0 auto;
-  padding: 2rem;
+  padding: 80px 160px 10px;
   text-align: center;
 }
 
@@ -183,7 +183,13 @@ button:focus,
 button:focus-visible {
   outline: 5px auto -webkit-focus-ring-color;
 }
-
+.topic{
+  text-transform: uppercase; 
+  margin-left: 35%;
+  cursor: pointer; 
+  flex-wrap: wrap;
+  color: #fbfbfd;
+}
 @media (prefers-color-scheme: light) {
   :root {
     color: #e1e4e7;
@@ -205,6 +211,9 @@ button:focus-visible {
     --header-height: 56px;
     --icon-size: 24px;
   }
+  #app{
+    padding: 30px 50px 5px;
+  }
 
   #aSide iframe {
     /* background-color: aqua; */
@@ -212,7 +221,7 @@ button:focus-visible {
   }
 
   .content {
-    padding: 10px 10px;
+    padding: 10px 40px;
     text-align: justify;
   }
 }
