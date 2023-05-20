@@ -126,8 +126,8 @@ h2,h3,p{
   opacity: 1;
 }
 .aSide iframe {
-  height: 550px;
-  width: 80%;
+  height: 650px;
+  width: 90%;
   padding: 10px 10px;
   border: none;
 }
@@ -265,10 +265,10 @@ button:focus-visible {
     padding: 50px 20px 5px;
   }
 
-  .aSide iframe {
-    /* background-color: aqua; */
+  /* .aSide iframe {
+    background-color: aqua;
     width: 80%;
-  }
+  } */
 
   #viewButton {
     position: relative;
@@ -276,7 +276,7 @@ button:focus-visible {
   
   }
   .content {
-    padding: 2px 10px;
+    padding: 2px 2px;
     text-align: justify;
   }
 }
