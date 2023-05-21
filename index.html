@@ -21,14 +21,14 @@
     <div class="topnav" id="myTopnav">
       <a href="#index.html"> <img src="files/effectuall.svg" class="title" alt="Effectual logo"></a>
       <a href="#home">Home</a>
-      <a href="#Simulations">Simulations</a>
+      <a href="Simulations/index.html">Simulations</a>
       <a href="#aboutUs">About Us</a>
       <a href="javascript:void(0);" class="icon" onclick="myFunction()">
         <i class="fa fa-bars"></i>
       </a>
     </div>
 
-    <div class="content">
+ 
       <div id="app" class="app">
         <div>
           <h1>Physics Interactive 3D Simulations</h1>
@@ -50,6 +50,7 @@
             </div>
           </div>
         </div>
+       
         <div class="aSide">
           <iframe src="Simulations/microscope.html" name="iframe" id="iframe" title="Iframe Display"></iframe>
           <a id="viewButton" onclick="viewFunction()"><i class="fa fa-expand" aria-hidden="true"></i></a>
@@ -65,7 +66,7 @@
             </li>
           </p>
         </div>
-      </div>
+      
       
       
 
@@ -170,7 +171,21 @@
         viewButton.target = "_blank";
 
       }
-     
+      let optics1 = document.getElementById("Optics_Compound_Microscope");
+      let optics2 = document.getElementById("Astronomical_Telescope");
+      function openUrl1() {
+        // optics1.href = "https://effectuall.github.io/Simulations/Optics_Compound_Microscope.html";
+        console.log(optics1)
+        // iFrame.href = "https://effectuall.github.io/Simulations/Optics_Compound_Microscope.html";
+        iFrame.src = optics1.href;
+      }
+      function openUrl2() {
+        iFrame.src = "about:blank"
+        console.log(optics2)
+        // optics2.href = "https://effectuall.github.io/Simulations/Optics_Astronomical_Telescope.html";
+
+        iFrame.src = "https://effectuall.github.io/Simulations/Optics_Astronomical_Telescope.html";
+      }
     </script>
     <script type="module" src="footer.js"></script>
 </body>
