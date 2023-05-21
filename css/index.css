@@ -1,20 +1,18 @@
 :root {
-	color-scheme: light dark;
-
-	--background-color: #fff;
+	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+	line-height: 1.5;
+	font-weight: 400;
+	--background-color: #0b111e;
 	--secondary-background-color: rgba(0, 164, 240,0.4);
 
-	--color-blue: #049EF4;
-	--text-color: #444;
+	--color-blue: #00b3b3;
+	--text-color: #fbfbfd;
 	--secondary-text-color: #fbf7f7;
 
-	--font-size: 16px;
-	--line-height: 26px;
-
-	--border-style: 1px solid #E8E8E8;
+	
 	--header-height: 48px;
-	--panel-width: 300px;
-	--panel-padding: 16px;
+	--panel-width: 250px;
+	--panel-padding: 3px;
 	--icon-size: 20px;
 }
 
@@ -69,9 +67,7 @@ h1 {
 	font-weight: bold;
 }
 
-h2 {
-	padding: 0;
-	margin: 16px 0;
+h2 {	
 	font-size: calc(var(--font-size) - 1px);
 	line-height: var(--line-height);
   	text-transform: uppercase;
@@ -93,8 +89,8 @@ h1 a {
 #header {
 	display: flex;
 	height: var(--header-height);
-	border-bottom: var(--border-style);
 	align-items: center;
+	font-size: small;
 }
 #header h1 {
 	padding-left: var(--panel-padding);
@@ -114,16 +110,17 @@ h1 a {
 }
 
 #panel #header{
-  background-color: rgb(0, 164, 240);
+  background-color: #0a0e17;
 }
 
 #panel h1 a{
   color: white;
-  font-weight: bold;
+  font-weight: bold;  
   text-shadow: 2px 2px 10px black;
 }
 #panel {
 	position: fixed;
+	padding-left: 16px;
 	z-index: 100;
 	left: 0px;
 	width: var(--panel-width);
@@ -133,6 +130,7 @@ h1 a {
 	display: flex;
 	flex-direction: column;
 	transition: 0s 0s height;
+	background-color: #0a0e17
 }
 
 
@@ -200,7 +198,7 @@ h1 a {
 		height: 100%;
 		position: relative;
 		display: flex;
-    		/* font-weight: bold; */
+    		font-weight: bold;
 		justify-content: center;
 		align-items: center;
 	}
@@ -214,6 +212,7 @@ h1 a {
 	}
 	#panel #sections a {
 		color: var(--secondary-text-color);
+		
 	}
 
 	body.home #panel #sections {
@@ -334,6 +333,7 @@ h1 a {
 
 		#panel #content .selected {
 			text-decoration: underline;
+			
 		}
 
 		#panel #content .hidden {
