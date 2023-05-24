@@ -28,47 +28,59 @@
       </a>
     </div>
 
- 
-      <div id="app" class="app">
+
+    <div id="app" class="app">
+      <div>
+        <h1>Physics Interactive 3D Simulations</h1>
+        <h3>Effect of Visual Learning - Effectual Learning </h3>
+        <p>A virtual 3D Learning Platform</p>
+        <h2>Explore. Evaluate. Envision.</h2>
+        <p> Effectuall provides an effective and powerful 3D learning platform for
+          Interactive Physics Simulations. It introduces a teaching methodology that uses technology as access points
+          for guiding students in science.</p>
+
+        <a href="https://effectuall.github.io/" target="_blank"><button>Find Out More</button></a>
+      </div>
+      <!-- //donate -->
+      <div>
+        <form action="https://www.paypal.com/donate" method="post" target="_top">
+          <input type="hidden" name="hosted_button_id" value="ZTQ5RKXFNFB26" />
+          <input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_SM.gif" border="0" name="submit"
+            title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+          <img alt="" border="0" src="https://www.paypal.com/en_IN/i/scr/pixel.gif" width="1" height="1" />
+        </form>
+      </div>
+
+
+      <!-- //list of Simulations -->
+      <div id="Simulations">
         <div>
-          <h1>Physics Interactive 3D Simulations</h1>
-         <h3>Effect of Visual Learning - Effectual Learning </h3>
-         <p>A virtual 3D Learning Platform</p>  
-         <h2>Explore. Evaluate. Envision.</h2> 
-         <p> Effectuall provides an effective and powerful 3D learning platform for
-            Interactive Physics Simulations. It introduces a teaching methodology that uses technology as access points
-            for guiding students in science.</p>
-            <a href="https://effectuall.github.io/" target="_blank"><button>Find Out More</button></a>
-        </div>
-        <!-- //list of Simulations -->
-        <div id="Simulations">
-          <div>
-            <h1 style="font-size: 26px; text-transform: uppercase;">List of Simulations</h1>
+          <h1 style="font-size: 26px; text-transform: uppercase;">List of Simulations</h1>
 
-            <div id="sims">
+          <div id="sims">
 
-            </div>
           </div>
         </div>
-       
-        <div class="aSide">
-          <iframe src="Simulations/microscope.html" name="iframe" id="iframe" title="Iframe Display"></iframe>
-          <a id="viewButton" onclick="viewFunction()"><i class="fa fa-expand" aria-hidden="true"></i></a>
-        </div>
-        <div>
-          <p>
-            USE MOUSE
-            <li>
-              to zoom and pan around in the 3D space
-            </li>
-            <li>
-              to click for the microscope parts description
-            </li>
-          </p>
-        </div>
-      
-      
-      
+      </div>
+
+      <div class="aSide">
+        <iframe src="Simulations/microscope.html" name="iframe" id="iframe" title="Iframe Display"></iframe>
+        <a id="viewButton" onclick="viewFunction()"><i class="fa fa-expand" aria-hidden="true"></i></a>
+      </div>
+      <div>
+        <p>
+          USE MOUSE
+          <li>
+            to zoom and pan around in the 3D space
+          </li>
+          <li>
+            to click for the microscope parts description
+          </li>
+        </p>
+      </div>
+
+
+
 
       <div class="content" id="aboutUs">
         <h3>About Us</h3>
@@ -121,13 +133,13 @@
 
       function myAdd(div, a, viewer) {
         const X = document.createElement('a');
-        
+
         X.target = viewer.name;
-        
+
         viewer.focus();
         viewer.style.display = 'unset';
 
-        X.href = P + a +".html";
+        X.href = P + a + ".html";
         X.innerHTML = getName(a);
         div.append(X)
         console.log(X)
@@ -171,21 +183,7 @@
         viewButton.target = "_blank";
 
       }
-      let optics1 = document.getElementById("Optics_Compound_Microscope");
-      let optics2 = document.getElementById("Astronomical_Telescope");
-      function openUrl1() {
-        // optics1.href = "https://effectuall.github.io/Simulations/Optics_Compound_Microscope.html";
-        console.log(optics1)
-        // iFrame.href = "https://effectuall.github.io/Simulations/Optics_Compound_Microscope.html";
-        iFrame.src = optics1.href;
-      }
-      function openUrl2() {
-        iFrame.src = "about:blank"
-        console.log(optics2)
-        // optics2.href = "https://effectuall.github.io/Simulations/Optics_Astronomical_Telescope.html";
 
-        iFrame.src = "https://effectuall.github.io/Simulations/Optics_Astronomical_Telescope.html";
-      }
     </script>
     <script type="module" src="footer.js"></script>
 </body>
