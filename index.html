@@ -3,9 +3,8 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="files/favicon_white.ico" />
+  <link rel="icon" type="image/svg+xml" href="files/icon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <title>Physics Interactive Learning Simulations in 3D</title>
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <!-- meta tags example -->
@@ -13,7 +12,6 @@
     content=" physics, 3D, interactive, simulation, webgl, threejs, effectual, learning, science, freelance, creative" />
   <meta name="author" content="sajith EP, effectuallearning@gmail.com" />
   <meta name="developer" content="" />
-
 </head>
 
 <body>
@@ -24,7 +22,7 @@
       <a href="Simulations/index.html">Simulations</a>
       <a href="#aboutUs">About Us</a>
       <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-        <i class="fa fa-bars"></i>
+        <img src="files/ic_menu_black_24dp.svg" alt="previewToggleer">
       </a>
     </div>
 
@@ -50,8 +48,7 @@
           <img alt="" border="0" src="https://www.paypal.com/en_IN/i/scr/pixel.gif" width="1" height="1" />
         </form>
       </div>
-
-
+     
       <!-- //list of Simulations -->
       <div id="Simulations">
         <div>
@@ -65,7 +62,7 @@
 
       <div class="aSide">
         <iframe src="Simulations/microscope.html" name="iframe" id="iframe" title="Iframe Display"></iframe>
-        <a id="viewButton" onclick="viewFunction()"><i class="fa fa-expand" aria-hidden="true"></i></a>
+        <a id="viewButton" onclick="viewFunction()"> <img src="files/ic_code_black_24dp.svg" alt="viewer"></a>
       </div>
       <div>
         <p>
@@ -80,14 +77,8 @@
       </div>
 
 
-
-
       <div class="content" id="aboutUs">
-        <h3>About Us</h3>
-        <p>All of the simulations in this site are created by me, <a href="mailto:effectuallearning@gmail.com">E.P
-            Sajitha</a>. Please click on my name to send feedback about the simulation contents, visualisations
-          or suggestions for new simulations.</p>
-        <p>The ensemble of Physics Interactive Simulations in 3D, developed using open source Three.js-JavaScript
+        <p>The ensemble of Physics Interactive Simulations in 3D are developed using open source Three.js-JavaScript
           3D Library.</p>
 
         <p><strong>Three.js</strong> is a cross-browser JavaScript library and application programming interface used to
@@ -95,6 +86,28 @@
           display animated 3D computer graphics in a web browser using WebGL. The source code is hosted in a
           repository on GitHub. Three.js allows the creation of graphical processing unit (GPU)-accelerated 3D
           animations using the JavaScript language</p>
+          <div class="aSide" id="popup">
+           
+                <h2>Lets get in touch. Send me a message: </h2>
+                <a href="mailto:effectuallearning@gmail.com"><img src="files/send_black_24dp.svg" style="margin-bottom: 0; padding-right: 10px ;" alt="email">SEND MESSAGE</a>
+                              
+              </div>
+          
+        <h3>About Us</h3>
+        <p>All of the simulations in this site are created by me, <a href="mailto:effectuallearning@gmail.com">E.P
+            Sajitha</a>. Please send feedback about the simulation contents, visualisations
+          or suggestions for new simulations and consider supporting me.</p>
+          <div class="aSide">
+          <a href="https://www.youtube.com/channel/UCFSMjn_YssD7Y1ybBwZb3mw"> Subscribe Here for the Youtube Channel</a><br>
+       
+            <form action="https://www.paypal.com/donate" method="post" target="_top">
+              <input type="hidden" name="hosted_button_id" value="ZTQ5RKXFNFB26" />
+              <input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_SM.gif" border="0" name="submit"
+                title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+              <img alt="" border="0" src="https://www.paypal.com/en_IN/i/scr/pixel.gif" width="1.5" height="1.5" />
+            </form>
+          </div>      
+
       </div>
     </div>
     <div style="text-align: center;" id="counterCard">
@@ -129,7 +142,7 @@
         }
         row.append(each);
       }
-      console.log(row)
+      // console.log(row)
 
       function myAdd(div, a, viewer) {
         const X = document.createElement('a');
@@ -142,7 +155,7 @@
         X.href = P + a + ".html";
         X.innerHTML = getName(a);
         div.append(X)
-        console.log(X)
+        // console.log(X)
       }
 
       function getName(file) {
@@ -183,7 +196,7 @@
         viewButton.target = "_blank";
 
       }
-
+      
     </script>
     <script type="module" src="footer.js"></script>
 </body>
