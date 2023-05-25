@@ -2,422 +2,203 @@
 <html lang="en">
 
 <head>
-	<meta charset="utf-8">
-	<link rel="shortcut icon"  sizes="any" type="image/svg+xml" href="../files/icon.ico" />
-	<title>Physics interactive simulations</title>
-	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="../css/index.css">
-
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="files/icon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Physics Interactive Learning Simulations in 3D</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <!-- meta tags example -->
+  <meta name="keywords"
+    content=" physics, 3D, interactive, simulation, webgl, threejs, effectual, learning, science, freelance, creative" />
+  <meta name="author" content="sajith EP, effectuallearning@gmail.com" />
+  <meta name="developer" content="" />
 </head>
 
 <body>
-
-	<div id="panel">
-
-		<div id="header">
-			<h1><a href="../index.html" src=""><img src="../files/effectuall.svg"
-						style=" padding-left: 6px; height: 2em;" class="title" alt="Effectual logo"></h1>
-
-			<div id="sections">
-				<!-- <a href="./Theory/index.html">About Us</a> -->
-				<a class="selected">Simulations</a>
-			</div>
-
-			<div id="expandButton"></div>
-		</div>
-
-		<div id="panelScrim"></div>
-
-		<div id="contentWrapper">
-
-			<div id="inputWrapper">
-				<input placeholder="" type="text" id="filterInput" autocorrect="off" autocapitalize="off"
-					spellcheck="false" />
-				<div id="exitSearchButton"></div>
-			</div>
-			<div id="home">
-				<a href="index.html">
-					<img src="../files/ic_home_black_24dp.svg" width="25" height="25" />
-				</a>
-			</div>
-
-			<div id="content">
-				<img id="previewsToggler" src="../files/thumbnails.svg" width="20" height="20" />
-			</div>
-		</div>
-
-
-	</div>
-
-	<iframe id="viewer" name="viewer" allow="fullscreen; xr-spatial-tracking;" src="Mechanics/Mechanics_Circular_Motion.html"></iframe>
-
-	<script>
-
-		const panel = document.getElementById('panel');
-		const content = document.getElementById('content');
-		const viewer = document.getElementById('viewer');
-		const filterInput = document.getElementById('filterInput');
-		const exitSearchButton = document.getElementById('exitSearchButton');
-		const expandButton = document.getElementById('expandButton');
-		const viewSrcButton = document.getElementById('button');
-		const panelScrim = document.getElementById('panelScrim');
-		const previewsToggler = document.getElementById('previewsToggler');
-
-		const sectionLink = document.querySelector('#sections > a');
-		const sectionDefaultHref = sectionLink.href;
-
-		const links = {};
-		const validRedirects = new Map();
-		const container = document.createElement('div');
-
-		let selected = null;
-
-		const hash = window.location.hash.substring(1);
-
-		init();
-		
-
-
-
-		async function init() {
-
-			content.appendChild(container);
-			content.classList.toggle('minimal');
-
-
-			const files = await (await fetch('files.json')).json();
-			const tags = await (await fetch('tags.json')).json();
-
-			for (const key in files) {
-
-				const section = files[key];
-
-				const header = document.createElement('h2');
-				header.textContent = key;
-				header.setAttribute('data-category', key);
-				container.appendChild(header);
-
-				for (let i = 0; i < section.length; i++) {
-
-					const file = section[i];
-
-					const link = createLink(key, file);
-					container.appendChild(link);
-
-					links[file] = link;
-
-					validRedirects.set(file, key + '/' + file + '.html');
-
-				}
-
-			}
-
-
-			if (window.location.hash !== '') {
-
-				const file = window.location.hash.substring(13);
-				// console.log(file, validRedirects.has(file), validRedirects, window.location.hash)
-				// use a predefined map of redirects to avoid untrusted URL redirection due to user-provided value
-
-				if (validRedirects.has(file) === true) {
-					// console.log(file)
-					selectFile(file);
-					viewer.src = validRedirects.get(file);
-					viewer.style.display = 'unset';
-
-				}
-
-			}
-
-			if (viewer.src === '') {
-				window.location.hash = hash;
-				viewer.src = hash;
-				viewer.style.display = 'unset';
-				console.log(content.className);
-
-			}
-
-
-
-			filterInput.value = extractQuery();
-
-			if (filterInput.value !== '') {
-
-				panel.classList.add('searchFocused');
-
-
-				updateFilter(files, tags);
-
-			} else {
-
-				updateLink('');
-
-			}
-
-			// Events
-
-			filterInput.onfocus = function () {
-				content.classList.toggle('minimal');
-				panel.classList.add('searchFocused');
-
-			};
-
-			filterInput.onblur = function () {
-
-				if (filterInput.value === '') {
-
-					panel.classList.remove('searchFocused');
-
-				}
-
-			};
-
-			exitSearchButton.onclick = function () {
-
-				filterInput.value = '';
-				updateFilter(files, tags);
-				panel.classList.remove('searchFocused');
-				content.classList.toggle('minimal');
-
-			};
-
-			filterInput.addEventListener('input', function () {
-
-				updateFilter(files, tags);
-
-			});
-
-
-			expandButton.addEventListener('click', function (event) {
-
-				event.preventDefault();
-				panel.classList.toggle('open');
-
-			});
-
-			panelScrim.onclick = function (event) {
-
-				event.preventDefault();
-				panel.classList.toggle('open');
-
-			};
-
-			previewsToggler.onclick = function (event) {
-
-				event.preventDefault();
-				content.classList.toggle('minimal');
-
-			};
-
-			// iOS iframe auto-resize workaround
-
-			if (/(iPad|iPhone|iPod)/g.test(navigator.userAgent)) {
-
-				viewer.style.width = getComputedStyle(viewer).width;
-				viewer.style.height = getComputedStyle(viewer).height;
-				viewer.setAttribute('scrolling', 'no');
-
-			}
-
-		}
-
-
-		function createLink(key, file) {
-
-			const template = `
-				<div class="card">
-					<a href="${key}/${file}.html" target="viewer">
-						<div class="cover">
-							<img src="../assets/screenshots/${file}.jpg" loading="lazy" width="400" />
-						</div>
-						<div class="title">${getName(file)}</div>
-					</a>
-				</div>
-			`;
-
-			const link = createElementFromHTML(template);
-
-			link.querySelector('a[target="viewer"]').addEventListener('click', function (event) {
-
-				if (event.button !== 0 || event.ctrlKey || event.altKey || event.metaKey) return;
-
-				selectFile(file);
-
-			});
-
-			return link;
-
-		}
-
-		function selectFile(file) {
-
-			if (selected !== null) links[selected].classList.remove('selected');
-
-			links[file].classList.add('selected');
-
-			window.location.hash = 'Simulations/' + file;
-			viewer.focus();
-			viewer.style.display = 'unset';
-
-			panel.classList.remove('open');
-
-			selected = file;
-
-		}
-
-		function updateFilter(files, tags) {
-
-			let v = filterInput.value.trim();
-			v = v.replace(/\s+/gi, ' '); // replace multiple whitespaces with a single one
-
-			if (v !== '') {
-
-				window.history.replaceState({}, '', '?q=' + v + window.location.hash);
-
-			} else {
-
-				window.history.replaceState({}, '', window.location.pathname + window.location.hash);
-
-			}
-
-			const exp = new RegExp(v, 'gi');
-
-			for (const key in files) {
-
-				const section = files[key];
-
-				for (let i = 0; i < section.length; i++) {
-
-					filterExample(section[i], exp, tags);
-
-				}
-
-			}
-
-			layoutList(files);
-
-			updateLink(v);
-
-		}
-
-		function updateLink(search) {
-
-			// update docs link
-
-			if (search) {
-
-				const link = sectionLink.href.split(/[?#]/)[0];
-				sectionLink.href = `${link}?q=${search}`;
-
-			} else {
-
-				sectionLink.href = sectionDefaultHref;
-
-			}
-
-		}
-
-		function filterExample(file, exp, tags) {
-
-			const link = links[file];
-			const name = getName(file);
-			if (file in tags) file += ' ' + tags[file].join(' ');
-			const res = file.match(exp);
-			let text;
-
-			if (res && res.length > 0) {
-
-				link.classList.remove('hidden');
-
-				for (let i = 0; i < res.length; i++) {
-
-					text = name.replace(res[i], '<b>' + res[i] + '</b>');
-
-				}
-
-				link.querySelector('.title').innerHTML = text;
-
-			} else {
-
-				link.classList.add('hidden');
-				link.querySelector('.title').innerHTML = name;
-
-			}
-
-		}
-
-		function getName(file) {
-
-			const name = file.split('_');
-			name.shift();
-			return name.join('  ');
-
-		}
-
-		function layoutList(files) {
-
-			for (const key in files) {
-
-				let collapsed = true;
-
-				const section = files[key];
-
-				for (let i = 0; i < section.length; i++) {
-
-					const file = section[i];
-
-					if (links[file].classList.contains('hidden') === false) {
-
-						collapsed = false;
-						break;
-
-					}
-
-				}
-
-				const element = document.querySelector('h2[data-category="' + key + '"]');
-
-				if (collapsed) {
-
-					element.classList.add('hidden');
-
-				} else {
-
-					element.classList.remove('hidden');
-
-				}
-
-			}
-
-		}
-
-		function extractQuery() {
-
-			const search = window.location.search;
-
-			if (search.indexOf('?q=') !== - 1) {
-
-				return decodeURI(search.substr(3));
-
-			}
-
-			return '';
-
-		}
-
-		function createElementFromHTML(htmlString) {
-
-			const div = document.createElement('div');
-			div.innerHTML = htmlString.trim();
-			return div.firstChild;
-
-		}
-
-
-
-	</script>
-	<!-- <script src="script.js"></script> -->
-
+  <div id="home">
+    <div class="topnav" id="myTopnav">
+      <a href="#index.html"> <img src="files/effectuall.svg" class="title" alt="Effectual logo"></a>
+      <a href="#home">Home</a>
+      <a href="Simulations/index.html">Simulations</a>
+      <a href="#aboutUs">About Us</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <img src="files/ic_menu_black_24dp.svg" alt="previewToggleer">
+      </a>
+    </div>
+
+
+    <div id="app" class="app">
+      <div>
+        <h1>Physics Interactive 3D Simulations</h1>
+        <h3>Effect of Visual Learning - Effectual Learning </h3>
+        <p>A virtual 3D Learning Platform</p>
+        <h2>Explore. Evaluate. Envision.</h2>
+        <p> Effectuall provides an effective and powerful 3D learning platform for
+          Interactive Physics Simulations. It introduces a teaching methodology that uses technology as access points
+          for guiding students in science.</p>
+
+        <a href="https://effectuall.github.io/" target="_blank"><button>Find Out More</button></a>
+      </div>
+      <!-- //donate -->
+      <div>
+        <form action="https://www.paypal.com/donate" method="post" target="_top">
+          <input type="hidden" name="hosted_button_id" value="ZTQ5RKXFNFB26" />
+          <input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_SM.gif" border="0" name="submit"
+            title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+          <img alt="" border="0" src="https://www.paypal.com/en_IN/i/scr/pixel.gif" width="1" height="1" />
+        </form>
+      </div>
+     
+      <!-- //list of Simulations -->
+      <div id="Simulations">
+        <div>
+          <h1 style="font-size: 26px; text-transform: uppercase;">List of Simulations</h1>
+
+          <div id="sims">
+
+          </div>
+        </div>
+      </div>
+
+      <div class="aSide">
+        <iframe src="Simulations/microscope.html" name="iframe" id="iframe" title="Iframe Display"></iframe>
+        <a id="viewButton" onclick="viewFunction()"> <img src="files/ic_code_black_24dp.svg" alt="viewer"></a>
+      </div>
+      <div>
+        <p>
+          USE MOUSE
+          <li>
+            to zoom and pan around in the 3D space
+          </li>
+          <li>
+            to click for the microscope parts description
+          </li>
+        </p>
+      </div>
+
+
+      <div class="content" id="aboutUs">
+        <p>The ensemble of Physics Interactive Simulations in 3D are developed using open source Three.js-JavaScript
+          3D Library.</p>
+
+        <p><strong>Three.js</strong> is a cross-browser JavaScript library and application programming interface used to
+          create and
+          display animated 3D computer graphics in a web browser using WebGL. The source code is hosted in a
+          repository on GitHub. Three.js allows the creation of graphical processing unit (GPU)-accelerated 3D
+          animations using the JavaScript language</p>
+          <div class="aSide" id="popup">
+           
+                <h2>Lets get in touch. Send me a message: </h2>
+                <a href="mailto:effectuallearning@gmail.com"><img src="files/send_black_24dp.svg" style="margin-bottom: 0; padding-right: 10px ;" alt="email">SEND MESSAGE</a>
+                              
+              </div>
+          
+        <h3>About Us</h3>
+        <p>All of the simulations in this site are created by me, <a href="mailto:effectuallearning@gmail.com">E.P
+            Sajitha</a>. Please send feedback about the simulation contents, visualisations
+          or suggestions for new simulations and consider supporting me.</p>
+          <div class="aSide">
+          <a href="https://www.youtube.com/channel/UCFSMjn_YssD7Y1ybBwZb3mw"> Subscribe Here for the Youtube Channel</a><br>
+       
+            <form action="https://www.paypal.com/donate" method="post" target="_top">
+              <input type="hidden" name="hosted_button_id" value="ZTQ5RKXFNFB26" />
+              <input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_SM.gif" border="0" name="submit"
+                title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+              <img alt="" border="0" src="https://www.paypal.com/en_IN/i/scr/pixel.gif" width="1.5" height="1.5" />
+            </form>
+          </div>      
+
+      </div>
+    </div>
+    <div style="text-align: center;" id="counterCard">
+      ___________________
+      <p id="footer"></p>
+      <p id="email"></p>
+    </div>
+    <script type="module">
+
+      import files from "./Simulations/files.json" assert { type: 'json' };
+
+      const iframe = document.getElementById('iframe');
+      const links = {};
+      let P = "https://effectuall.github.io/Simulations/"
+      const row = document.getElementById('sims');
+
+      for (const key in files) {
+        const section = files[key];
+        const each = document.createElement('div');
+        each.className = "dropdown";
+
+        const div = document.createElement('div');
+        div.className = "dropdown-content";
+
+        div.id = "A";
+        for (let i = 0; i < section.length; i++) {
+          const X = `<button class="dropbtn"> ${key} </button>`;
+          each.innerHTML = X.trim();
+          each.append(div)
+          const file = section[i]
+          myAdd(div, file, iframe)
+        }
+        row.append(each);
+      }
+      // console.log(row)
+
+      function myAdd(div, a, viewer) {
+        const X = document.createElement('a');
+
+        X.target = viewer.name;
+
+        viewer.focus();
+        viewer.style.display = 'unset';
+
+        X.href = P + a + ".html";
+        X.innerHTML = getName(a);
+        div.append(X)
+        // console.log(X)
+      }
+
+      function getName(file) {
+
+        const name = file.split('_');
+        name.shift();
+        return name.join('  ');
+
+      }
+    </script>
+    <script>
+
+      let x = document.getElementById("myTopnav");
+      function myFunction() {
+
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      }
+      window.onscroll = function () { myFun() };
+      let sticky = x.offsetTop;
+
+      function myFun() {
+        if (window.pageYOffset >= sticky) {
+          x.classList.add("sticky")
+        } else {
+          x.classList.remove("sticky");
+        }
+      }
+
+      let iFrame = document.getElementById("iframe");
+      let viewButton = document.getElementById("viewButton");
+      function viewFunction() {
+
+        viewButton.href = iFrame.src;
+        viewButton.target = "_blank";
+
+      }
+      
+    </script>
+    <script type="module" src="footer.js"></script>
 </body>
 
 </html>
