@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="shortcut icon"  sizes="any" type="image/svg+xml" href="../../files/icon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <title>Diverging Lens with Interactive 3D Simulations</title>
+  <link rel="stylesheet" type="text/css" href="../../css/page.css">
+  <!-- meta tags example -->
+  <meta name="keywords"
+    content="physics, 3D, interactive, simulation, webgl, threejs, freelance, creative, optics, optical instrument, ray diagram, diverging, lens, concave, lens formula" />
+  <meta name="author" content="sajith EP, effectuallearning@gmail.com" />
+  <meta name="developer" content="" />
+</head>
+
+<body>
+  <div id="container">    
+    <div id="header">
+      <h2>Compound Microscope with Interactive 3D Simulation</h2>
+  </div>
+    
+    <div id="aSide">
+      <!-- <iframe src="./Angular_Momentum.html" name="iframe" title="Iframe Display"></iframe> -->
+      <iframe src="https://effectuall.github.io/Simulations/Optics_Diverging_Lens" name="iframe" title="Iframe Display"></iframe>
+      <a id="viewButton" onclick="viewFunction()"><i class="fa fa-expand" aria-hidden="true"></i></a>
+    </div>
+    <div id="bullets">
+      <p>
+
+        USE MOUSE
+        <li>
+          to zoom and pan around in the 3D space
+        </li>
+        <li>
+          to click for the microscope parts description
+        </li>
+      </p>
+    </div>
+    <div id="app">
+      <h3>Compound Microscope with Interactive 3D Simulations</h3>
+    </div>
+  
+      
+    <div id="part1" class="content">
+      <h2>Image Formation with Converging Lens</h2>
+      <p><strong>Description</strong></p>
+      <p>For simulation of image formation in concave lenses. Use the control menu, to change the lens <strong>focus</strong>,  to move the <strong> object</strong>  and adjust the object <strong>height</strong>.  
+      </p> 
+      <p>Observe that the focal length is negative here. </p>
+        <h2>Lens Formula </h2>
+        <p> $$\frac{1}{f} = \frac{1}{v}-\frac{1}{u} $$ 
+          \[\text{or}\]
+          $$\frac{1}{v} = \frac{1}{f}+\frac{1}{u} $$
+          <dl>
+            <dt>
+                &#160; &#xa0; &#10148; Focal length of concave lens (diverging lens) are negative.
+           </dt>
+       </dl>
+       <dl>
+        <dt>
+            &#160; &#xa0; &#10148; Image through the concave lens is always virtual and erect.     
+       </dt>
+        </dl>
+        </p>
+        <h2>Magnification</h2>  
+        $$m=\frac{v}{u} $$
+        <dl>
+          <dt>
+              &#160; &#xa0; &#10148; Magnification is less than is 1.     
+         </dt>
+        </dl> 
+        </div>   
+ 
+  
+  <div style="text-align: center;" id="counterCard">
+    ___________________
+    <p id="footer"></p>
+    <p id="email"></p>
+  </div>
+</div>
+<script>
+  let iFrame = document.getElementById("iframe");
+  let viewButton = document.getElementById("viewButton");
+  function viewFunction() {
+    viewButton.href = iFrame.src;
+    viewButton.target = "_blank";
+
+  }
+</script>
+
+  <script type="module" src="../../footer.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <title>Mechanics Circular Motion in Interactive 3D Simulations</title>
+  <link rel="stylesheet" type="text/css" href="../../css/page.css">
+  <!-- meta tags example -->
+  <meta name="keywords"
+    content=" physics, 3D, interactive, simulation, webgl, threejs, developer, freelance, creative, Mechanics, Circular Motion" />
+  <meta name="author" content="sajith EP, effectuallearning@gmail.com" />
+  <meta name="developer" content="" />
+</head>
+</head>
+
+<body>
+  <div id="container">
+    <div id="header">
+      <h3>Mathematical representation of uniform circular motion</h3>
+    </div>
+
+    <div id="aSide">
+      <iframe src="https://effectuall.github.io/Simulations/Mechanics_Circular_Motion" id="iframe" name="iframe"
+        title="Iframe Display"></iframe>
+      <a id="viewButton" onclick="viewFunction()"><i class="fa fa-expand" aria-hidden="true"></i></a>
+    </div>
+    <div id="app">
+      <div>
+        <h3></h3>
+      </div>
+    </div>
+
+    <div>
+      <p>
+
+        USE MOUSE
+        <li>
+          to zoom and pan around in the 3D space
+        </li>
+
+      </p>
+    </div>
+    <div style="float: left; margin-right:10px; margin-left: 10px;">
+      <canvas width="500px" height="500px" id="canvas1" ></canvas><br>
+    </div>
+    <div id="part1" class="content">
+      <p><input type="range" id="mass" name="mass" min="5" max="1000" value="100" step="5">
+        <label for="mass">MASS =</label><a id="massDisplay"></a>
+        <span>grams</span>
+      </p>
+
+      <p><input type="range" id="velocity" name="velocity" min="0" max="30" value="10" step="5">
+        <label for="velocity">VELOCITY =</label><a id="velocityDisplay"></a> m/s<br>
+      </p>
+
+
+      <input type="range" id="radius" name="radius" min="10" max="120" value="50" step="2">
+
+      <label for="radius">RADIUS =</label><a id="radiusDisplay"></a> m
+      <p><button id="pausebtn"> PAUSE </button></p>
+
+
+      <p> <a>Angular velocity,<em> &omega; = v/r = </em><a id="omega"></a> rad s<sup>-1</sup> </a></p>
+
+      <a>Time Period, <em>T = 2&pi;r/v = </em> <a id="period"></a> s </a>
+      <p> <a>Centripetal Acceleration,<em> a = v<sup>2</sup>/r = </em><a id="acceleration"></a> ms<sup>-2</sup> </a>
+      </p>
+      <p>
+        <a>Centripetal Force,<em> F = m a = m v<sup>2</sup>/r = </em><a id="force"></a> N </a>
+
+
+
+      <h2>Uniform Circular Motion</h2>
+      <p>If a particle travels along a circle or circular arc of radius \(r\) at
+        constant speed \(v\), it is said to be in uniform circular motion
+        and has an acceleration of constant magnitude \(a\). The force acting on the particle
+        is,
+        $$ \text {Force} = \text {mass} \times \text {acceleration}$$
+        $$ \vec{F} = ma $$
+        For uniform circular motion,
+        $$ \vec{F} = {m \vec{v}^2 \over r}$$ where \(\text {(centripetal acceleration)}\)
+
+        $$\vec{a} = {\vec{v}^2 \over r} $$
+
+    </div>
+    <div id="part2" class="content">
+      <h2> Understanding Circular Motion Mathematically</h2>
+
+      <dl>
+        <dt>
+          &#160 &#xa0 &#10148 Constant velocity which changes its direction, results in centripetal acceleration
+        </dt>
+      </dl>
+      In the simplest case of circular motion at radius \(r\) with
+      position given by the angular displacement \(\phi(t)\) from the x-axis,
+      the orbital angular velocity is the rate of change of angle with respect to time:
+      \[\omega ={\frac {d\phi }{dt}}\]
+      where \(d\phi\) is the angular displacement in time \(dt\).
+      <dl>
+        <dt>
+          &#160 &#xa0 &#10148 SI units of angular velocity is radians per second or \((rad/sec)\)
+        </dt>
+      </dl>
+
+      </p>
+      <p>
+        If \(\phi\) is measured in radians, the arc-length
+        from the positive x-axis around the circle to the particle is \(l=r\phi\) and the
+        linear velocity is equal to the rate of change in arc length,
+        $$ v = {dl \over dt} = {rd\phi \over dt} = r\omega $$ Hence angular velocity,
+        $$ \omega = {v \over r} $$
+      <dl>
+        <dt>
+          &#160 &#xa0 &#10148 Angular velocity is equal to linear velocity divided by the circular radius.
+        </dt>
+      </dl>
+      The angular acceleration \(\alpha\), on the particle is:
+      $$ \alpha ={d\omega \over dt} = {d \over dt}\left({v \over r}\right) $$
+      \[
+      \space = {1 \over r}{dv \over dt} - { v \over r^2}{ dr \over dt}
+      \]
+
+      </p>
+      <p>
+        For uniform circular motion with constant radius and speed, \(\alpha = 0 \)
+        and the acceleration due to change in direction is
+        $$\vec{a} = {d \vec{v} \over dt} = {d \vec{v} \over d\vec{r}} {d \vec{r} \over dt}=
+        { v \over r}{ d\vec{r}\over dt} ={ \vec{v} \over r}v ={ \vec{v}^2 \over r} $$
+      <dl>
+        <dt>
+          &#160 &#xa0 &#10148 Circular motion with constant velocity results in Radial Acceleration (only) directed
+          towards the center
+        </dt>
+      </dl>
+      A radial acceleration, also known as centripetal acceleration, acts on
+      a particle in uniform circular motion and,
+      \[
+      a_{c} = {v^2 \over r}
+      \]
+      The direction of \(\vec{a}\) is towards the center of the circle or circular
+      arc, and the direction of velocity vector \(\vec{v}\) is always tangent to the path.
+      <dl>
+        <dt>
+          &#160 &#xa0 &#10148 SI units of centripetal acceleration is \(m/s^2\) or \(ms^{-2}\)
+        </dt>
+      </dl>
+      The time for the particle to complete a circle, \(T\), is called the period of revolution, or simply the period,
+      of the
+      motion.
+      \[
+      T = {\text{distance travelled} \over \text{velocity}}
+      \]
+      \[
+      \space = {\text{Circumference} \over \text{velocity}}
+      \]
+      \[
+      T={2\pi r \over v}
+      \]
+      </p>
+    </div>
+    <div id="part3" class="content">
+      <h2>Equations of Centripetal Force </h2>
+      <dl>
+        <dt>
+          &#160 &#xa0 &#10148 In terms of angular velocity, \(\omega\)
+        </dt>
+      </dl>
+      $$ \vec{F} = {m \omega ^2 r} $$
+      $$ \vec{a} = {\omega ^2 r} $$
+      $$ T = {2 \pi \over \omega} $$
+      <dl>
+        <dt>
+          &#160 &#xa0 &#10148 In terms of linear velocity, \(v\)
+        </dt>
+      </dl>
+      $$ \vec{F} = {m v^2 \over r} $$
+      $$ \vec{a} = { v^2 \over r} $$
+      $$ T = {2 \pi r \over v}$$
+
+    </div>
+    <div id="part4" class="content">
+
+      <h2>What is a Centrifugal Force?</h2>
+      <p>
+        In Newtonian mechanics, the centrifugal force is an inertial force
+        (also called a "fictitious" or "pseudo" force) that acts on a particle
+        moving in circular motion. Centrifugal force has magnitude and dimensions
+        same as that of centripetal force which keeps the particle in circular path but points
+        in the opposite direction.
+      </p>
+
+    </div>
+
+    <div style="text-align: center;" id="counterCard">
+      ___________________
+      <p id="footer"></p>
+      <p id="email"></p>
+    </div>
+  </div>
+  <script>
+    let iFrame = document.getElementById("iframe");
+    let viewButton = document.getElementById("viewButton");
+    function viewFunction() {
+      viewButton.href = iFrame.src;
+      viewButton.target = "_blank";
+
+    }
+  </script>
+  <script type="module" src="../../footer.js"></script>
+  <script>
+    const canvas = document.getElementById('canvas1');
+    const pauseButton = document.getElementById('pausebtn');
+    const ctx = canvas.getContext('2d');
+    let massEl = document.getElementById('mass');
+    let massDisplay = document.getElementById('massDisplay');
+    let radiusEl = document.getElementById('radius');
+    let radiusDisplay = document.getElementById('radiusDisplay');
+    let velocityEl = document.getElementById('velocity');
+    let velocityDisplay = document.getElementById('velocityDisplay');
+    let omegaDisplay = document.getElementById('omega');
+    let accelerationDisplay = document.getElementById('acceleration');
+    let forceDisplay = document.getElementById('force');
+    let periodDisplay = document.getElementById('period');
+
+    let backgroundImage = new Image();
+    // backgroundImage.src = 'Graph-paper.png';
+
+    let velocity = velocityEl.valueAsNumber;
+    let mass = massEl.valueAsNumber;
+    let radius = radiusEl.valueAsNumber;
+    let wvel = velocity / radius;
+    let acceleration = (velocity * velocity / radius);
+
+    const cx = canvas.width / 4, cy = canvas.height / 4;
+    let angle = 0, height = radius * 50, t = velocity / 200, freq = wvel;
+    let requestID, pause = false;
+    massDisplay.innerText = mass;
+    radiusDisplay.innerText = radius;
+    velocityDisplay.innerText = velocity;
+    accelerationDisplay.innerText = acceleration;
+    omegaDisplay.innerText = wvel;
+    periodDisplay.innerText = (2 * Math.PI * radius / velocity).toFixed(2);
+    forceDisplay.innerText = mass * acceleration;
+    massEl.addEventListener("input", function (event) {
+      // console.log(massEl.valueAsNumber )
+      mass = massEl.valueAsNumber;
+
+      massDisplay.innerText = mass;
+      forceDisplay.innerText = (mass * acceleration).toFixed(2);
+    });
+    velocityEl.addEventListener("input", function (event) {
+      console.log(velocityEl.valueAsNumber)
+      velocity = velocityEl.valueAsNumber;
+      freq = wvel;
+      wvel = velocity / radius;
+      velocityDisplay.innerText = velocity;
+      omegaDisplay.innerText = wvel.toFixed(2);
+      acceleration = (velocity * velocity / radius);
+      periodDisplay.innerText = (2 * Math.PI / freq).toFixed(2);
+      t = velocity / 200;
+      accelerationDisplay.innerText = acceleration.toFixed(2);
+      forceDisplay.innerText = (mass * acceleration).toFixed(2);
+    });
+
+    radiusEl.addEventListener("input", function (event) {
+      freq = wvel;
+      radius = radiusEl.valueAsNumber;
+      wvel = velocity / radius;
+      radiusDisplay.innerText = radius;
+      acceleration = (velocity * velocity / radius);
+      omegaDisplay.innerText = wvel.toFixed(2);
+      periodDisplay.innerText = (2 * Math.PI * radius / velocity).toFixed(2);
+      accelerationDisplay.innerText = acceleration.toFixed(2);
+      forceDisplay.innerText = (mass * acceleration).toFixed(2);
+    });
+
+    pauseButton.addEventListener('click', function () {
+      pause = !pause
+      if (pause) {
+        console.log('pause');
+        pauseButton.innerHTML = 'START';
+        cancelAnimationFrame(requestID);
+      } else {
+        console.log('Start');
+        pauseButton.innerHTML = 'PAUSE';
+        plotCurve();
+      }
+    });
+
+    plotCurve();
+
+    function plotCurve() {
+
+      let x = Math.cos(freq * angle) * radius,
+        y = Math.sin(freq * angle) * radius;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.drawImage(backgroundImage, 0, 0, 500, 500);
+      ctx.font = "20px Inter";
+      ctx.fillStyle = "red";
+      ctx.textAlign = "center";
+      ctx.fillText("Particle in a Circular Motion", canvas.width / 2, canvas.height - 10);
+
+      ctx.fillStyle = "green";
+      ctx.fillText("x = A coswt", (canvas.width * 2) / 3, canvas.height - 90);
+      ctx.fillStyle = "orange";
+      ctx.fillText("y = A sinwt", (canvas.width * 2) / 3, canvas.height - 70);
+      ctx.beginPath();
+      drawAxes(cx, 0, cx, cy * 4, '#00f');
+      drawAxes(0, cy, cx * 4, cy, '#f00');
+      ctx.closePath();
+      ctx.beginPath();
+      ctx.strokeStyle = 'grey';
+      ctx.moveTo(cx, cy);
+      ctx.lineTo(cx + x, cy + y);
+      ctx.lineTo(cx + x, cy);
+      ctx.lineTo(cx, cy);
+      ctx.moveTo(cx, cy);
+      ctx.lineTo(cx + x, cy + y);
+      ctx.lineTo(cx, cy + y);
+      ctx.stroke();
+      ctx.closePath();
+      ctx.beginPath();
+      ctx.strokeStyle = 'white';
+      ctx.arc(cx, cy, radius, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.closePath();
+      ctx.beginPath();
+      ctx.fillStyle = "green";
+      ctx.arc(cx + x, cy + y, 10, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.font = "24px Inter";
+      ctx.fillStyle = "white";
+      ctx.fillText("(x, y)", cx + x + 20, cy + y + 20);
+      ctx.closePath();
+
+      drawCosine(radius, freq * angle, 'green', cy, cx);
+      drawSine(radius, freq * angle, 'orange', cy, cx)
+      angle += t;
+      requestID = requestAnimationFrame(plotCurve);
+    }
+
+    function drawAxes(x1, y1, x2, y2, col) {
+      // console.log('axis')
+      ctx.beginPath();
+      ctx.strokeStyle = col;
+      ctx.fillStyle = 'green';
+      ctx.lineWidth = 2;
+      ctx.moveTo(x1, y1);
+      ctx.lineTo(x2, y2)
+      ctx.stroke();
+    }
+
+    function drawCosine(A, t, col, xAxis, yAxis) {
+      ctx.beginPath();
+      ctx.strokeStyle = col;
+      // Set the initial x and y, starting at 0,0 and translating to the origin on
+      // the canvas.
+      var y = t;
+      var x = Math.cos(y);
+      ctx.moveTo(A * x + yAxis, xAxis);
+
+
+      // Loop to draw segments
+      for (i = xAxis; i <= height; i += 5) {
+        y = t + (-xAxis + i) / A;
+        x = Math.cos(y);
+
+        ctx.lineTo(A * x + yAxis, i);
+      }
+      ctx.stroke();
+    }
+
+    function drawSine(A, t, col, xAxis, yAxis) {
+      ctx.beginPath();
+      ctx.strokeStyle = col;
+      // Set the initial x and y, starting at 0,0 and translating to the origin on
+      // the canvas.
+      var y = t;
+      var x = Math.sin(y);
+      ctx.moveTo(yAxis, A * x + xAxis);
+
+
+      // Loop to draw segments
+      for (i = xAxis; i <= height; i += 5) {
+        x = t + (-yAxis + i) / A;
+        y = Math.sin(x);
+
+        ctx.lineTo(i, A * y + yAxis);
+      }
+      ctx.stroke();
+    }
+  </script>
+</body>
+
+</html>

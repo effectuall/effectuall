@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="shortcut icon"  sizes="any" type="image/svg+xml" href="../../files/icon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <title>Compound Microscope with Interactive 3D Simulations</title>
+  <link rel="stylesheet" type="text/css" href="../../css/page.css">
+  <!-- meta tags example -->
+  <meta name="keywords"
+    content="  physics, 3D, interactive, simulation, webgl, threejs, freelance, creative,optics, optical instrument, ray diagram, Microscope" />
+  <meta name="author" content="sajith EP, effectuallearning@gmail.com" />
+  <meta name="developer" content="" />
+</head>
+
+<body>
+  <div id="container">    
+    <div id="header">
+      <h2>Compound Microscope with Interactive 3D Simulation</h2>
+  </div>
+    
+    <div id="aSide">
+      <!-- <iframe src="./Angular_Momentum.html" name="iframe" title="Iframe Display"></iframe> -->
+      <iframe src="https://effectuall.github.io/Simulations/Optics_Compound_Microscope.html" name="iframe" title="Iframe Display"></iframe>
+      <a id="viewButton" onclick="viewFunction()"><i class="fa fa-expand" aria-hidden="true"></i></a>
+    </div>
+    <div id="bullets">
+      <!-- <p>
+
+        USE MOUSE
+        <li>
+          to zoom and pan around in the 3D space
+        </li>
+        <li>
+          to click for the microscope parts description
+        </li>
+      </p> -->
+    </div>
+    <div id="app">
+      <h3>Compound Microscope with Interactive 3D Simulations</h3>
+    </div>
+      <div id="part1" class="content">
+        <h2>Working Principle of a Compound Microscope </h2>
+
+        <p>Optical system of a microscope includes
+        <ol>
+          <li>Objective lens</li>
+          <li>Eyepieces</li>
+        </ol>
+        During observation, specimen (object) is placed near the focal plane of the objective lens and a
+        magnified real image of the specimen is first created near the focal plane of the eyepiece.
+        Eyepiece then acts as a magnifier to further magnify the image. Finally a magnified, virtual, inverted image is
+        seen by the observer.
+        </p>
+        <dl>
+          <dt>
+            &#160; &#xa0; &#10148; Compound Microscope forms a virtual, magnified and inverted image.
+          </dt>
+        </dl>
+
+        <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset
+          concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum.
+          Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+      </div>
+      <div id="part2" class="content">
+
+        <h2>Magnification of a Microscope</h2>
+        <p>In a microscope, each lens produces a magnification that multipies the height of the image
+          (enlarges the image). It is apparent that the overall magnification, \(m\) of the microscope is
+          the product of the individual <a
+            href="https://openstax.org/books/college-physics/pages/26-4-microscopes">magnifications</a>:
+          $$ m = m_{o}m_{e} $$
+
+          where \(m_{o} \) is the magnification of the objective and \(m_{e} \) is the
+          magnification of the eyepiece.
+
+          Both objective and eyepiece contribute to the overall magnification.
+
+        </p>
+
+        <dl>
+          <dt>
+            <h3> &#160; &#xa0; &#10148; Magnification of a microscope, \(\boldsymbol{m = m_{o}m_{e}} \) </h3>
+          </dt>
+        </dl>
+
+
+      </div>
+      <div id="part3" class="content">
+
+        <h2>Resolution of a Microscope </h2>
+        <p>
+          <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/mid/NIHMS363450/"> Resolution of a microscope</a> is its
+          ability to clearly magnify two closeby objects.
+          The spatial resolution of a well designed optical microscope is mainly determined
+          by its objective lens and
+          is given by the Rayleigh equation as follows;
+          $$\Delta r_{0} = 0.62 \frac{\lambda }{n \sin \alpha}$$
+          where (\(\lambda\)), is the wavelength of the light source; \(n\)
+          is the refractive index of the medium between the specimen and the lens, \(\alpha\) is half-angle
+          aperature and \(n \sin \alpha\) is the numerical aperature (NA) of the objective lens.
+        </p>
+
+        <dl>
+          <dt>
+            <h3>&#160; &#xa0; &#10148; Resolution of a microscope depends on \(\lambda\) and \(n\)
+              for a microscope of given numeric aperature, NA.</h3>
+          </dt>
+        </dl>
+        <h3> Practical limitations of a light microscope</h3>
+        <ul style="list-style-type:circle;">
+          <li>Use of visible light with the wavelength between 390 nm and 790 nm. </li>
+          <li>Maximum reachable aperature with the haif-angle of 70-75 degree.</li>
+          <li>Requirement to use immersion methods with water or oil to increase the refractive index.</li>
+        </ul>
+        <dl>
+          <dt>
+            &#160; &#xa0; &#10148; <strong>Resolution of a conventional light microscope cannot exceed 200 nm.</strong>
+          </dt>
+        </dl>
+
+      </div>
+      <div id="part4" class="content">
+
+        <h2>Electron Microscope</h2>
+        <p>As the wavelength of electronic beam is much shorter than the visible light in several orders of magnitude,
+          the resolution of a microscope using electronic beam can reach \(\sim 0.3\) nm.
+
+          For this reason, electron microscope build on the principles of electronic optics, has very high magnification
+          power and can image the fine structures of objects.
+        </p>
+        <h3>Comparison of resolution</h3>
+        <ul style="list-style-type:none;">
+          <li>&#10148; <strong> Eye \(\sim 0.1\) mm,</strong> </li>
+          <li>&#10148; <strong> Light microscope \(\sim 0.2\) &#181;m,</strong></li>
+          <li>&#10148; <strong> Electron microscope \(\sim 0.3\) nm. </strong> </li>
+        </ul>
+
+      </div>  
+    <div style="text-align: center;" id="counterCard">
+      ___________________
+      <p id="footer"></p>
+      <p id="email"></p>
+    </div>
+  </div>
+  <script>
+    let iFrame = document.getElementById("iframe");
+    let viewButton = document.getElementById("viewButton");
+    function viewFunction() {
+      viewButton.href = iFrame.src;
+      viewButton.target = "_blank";
+
+    }
+  </script>
+ 
+    <script type="module" src="../../footer.js"></script>
+</body>
+
+</html>

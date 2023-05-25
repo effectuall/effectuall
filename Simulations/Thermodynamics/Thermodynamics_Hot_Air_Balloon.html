@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <title>Hot Air Balloon action with Interactive 3D Simulations</title>
+  <link rel="stylesheet" type="text/css" href="../../css/page.css">
+  <!-- meta tags example -->
+  <meta name="keywords"
+    content=" physics, 3D, interactive, simulation, webgl, threejs, developer, freelance, creative, Thermodynamics, Hot Air Balloon" />
+  <meta name="author" content="sajith EP, effectuallearning@gmail.com" />
+  <meta name="developer" content="" />
+</head>
+</head>
+
+<body>
+  <div id="container">
+    <div id="header">
+      <h2>Hot Air Balloon action with Interactive 3D Simulation</h2>
+    </div>
+
+    <div id="aSide">
+      <iframe src="https://effectuall.github.io/Simulations/Thermodynamics_Hot_Air_Balloon" id="iframe" name="iframe"
+        title="Iframe Display"></iframe>
+      <a id="viewButton" onclick="viewFunction()"><i class="fa fa-expand" aria-hidden="true"></i></a>
+    </div>
+    <div id="app">
+      <div>
+        <h3>Hot Air Balloon action :Visualise when the balloon lifts</h3>
+      </div>
+    </div>
+
+    <div>
+      <p>
+
+        ADJUST SLIDER
+        <li>
+          to visualise lift off action
+        </li>
+
+      </p>
+      <p>
+
+        USE MOUSE
+        <li>
+          to zoom and pan around in the 3D space
+        </li>
+
+      </p>
+
+    </div>
+    <div class="content" id="part1">
+      <h3>Formulas in play for a hot-air balloon lift-off</h3>
+
+
+      <dl>
+        <dt>
+          &#160; &#xa0; &#10148; Buoyant Force is equal to the weight of air displaced by the hot-air balloon
+          $$\begin{aligned} \text{Buoyant Force} &=\text{Pressure}\times \text{Area} \\ \text{B} &= (\rho_{\text{cold}}-
+          \rho_{\text{hot}}) gh\times A \\ &= (\rho_{\text{cold}}- \rho_{\text{hot}}) gV \end{aligned}$$
+        </dt>
+      </dl>
+
+      <dl>
+        <dt>
+          &#160; &#xa0; &#10148;<strong>Gas law equation</strong>
+          $$\begin{aligned} 
+          PV &= nRT \\ 
+          \frac{n}{V} &= \frac{P}{RT} \\ 
+          \frac{\text{m}_{air}}{V} &= \frac{\text{M}_{air}P}{RT} \\ 
+          \frac{\text{m}_{air}}{V} &= \frac{\text{const}}{T}\\ 
+          \text{density, &rho;} &= \frac{\text{const}}{T}\\ 
+          \text{&rho;} &&Proportional; \frac{1}{T} \\ 
+          \text{ (Density of air, &rho;}& &rArr;\text{ inversely proportional to temperature )}\\ 
+          \text{&rho;}_{\text{hot}} &=\frac{\text{&rho;}_{\text{cold}}
+          T_{\text{cold}}}{T_{\text{hot}}}\\ &= \frac{\text{&rho;}_{\text{c}} T_{\text{c}}}{T_{\text{h}}}\end{aligned}$$
+        </dt>
+      </dl>
+
+
+      <dl>
+        <dt>
+          &#10148; Buoyant Force
+          $$\begin{aligned} \textbf{B} &= \Big(\rho_{\text{c}}- \frac{\rho_{\text{c}} T_{\text{c}}}{T_{\text{h}}}\Big)
+          gV \\ \textbf{B} &= \rho_{\text{c}} \Big[ 1 - \frac{T_{\text{c}}}{T_{\text{h}}} \Big]gV\end{aligned}$$
+        </dt>
+      </dl>
+      <dl>
+        <dt>
+          <h3>when Buoyant Force is greater than the Weight, the Hot-Air Balloon lifts. i.e</h3>
+          $$\begin{aligned} \textbf{B} &= mg \\ \rho_{\text{c}} \Big[ 1 - \frac{T_{\text{c}}}{T_{\text{h}}} \Big]gV &=
+          mg\\ or, \Big[ 1 - \frac{T_{\text{c}}}{T_{\text{h}}} \Big]&= \frac{m}{\rho_{\text{c}} V} \end{aligned}$$
+        </dt>
+      </dl>
+    </div>
+    <div id="part2" class="content">
+      <h2>Question</h2>
+      <p>The mass of a hot-air balloon and its cargo (not including the air inside) is 200 kg. The air outside is at
+        10.0 °C and 101 kPa. The volume of the balloon is 400m<sup>3</sup>. To what temperature must the air in the
+        balloon be heated before the balloon will lift off? (Air density at 10.0°C is 1.25 kg/m<sup>3</sup>.)</p>
+
+      <strong>Calculation:</strong><br>
+      Given:- density, &rho; = 1.25 kg/m<sup>3</sup>; mass, m = 200 kg; volume, V = 400 m<sup>3</sup>; T<sub>c</sub>=
+      10+273 = 283K
+      $$\begin{aligned} 1 - \frac{T_{\text{c}}}{T_{\text{h}}} &=\Big( \frac{200}{1.25 \times 400}\Big) \\ 1 -
+      \frac{T_{\text{c}}}{T_{\text{h}}} &= \frac{1}{2.50} \\ 1 - \frac{283}{T_{\text{h}}} &= 0.4 \\ 0.6 &=
+      \frac{283}{T_{\text{h}}} \\ T_{\text{h}} &= \frac{283}{0.6} \\ T_{\text{h}} &= 472K \\or, T_{\text{h}} &= 472 -273
+      = 199\text{°C}\end{aligned}$$
+
+
+
+      <dl>
+        <dt>
+
+     <h3>Formulas used</h3>
+
+          $$\begin{aligned}
+          \text{Pressure, } P &= \frac{\text{Force}}{\text{Area}}\\
+          \text{Pressure, } P &= \text{&rho;gh} \\
+          \text{Density, } &rho; &= \frac{\text{Mass}}{\text{Volumn}} \end{aligned}$$
+
+        </dt>
+      </dl>
+      <dl>
+        <dt>
+          <strong>where</strong>
+          $$\begin{aligned} \text{M}_{air} &=\text{Molecular Mass of air} \\ \text{m}_{air} &= \text{Given mass of air}
+          \\ {{\text{m}_{air}}\over{\text{M}_{air}}} &= n \text{ , No. of moles }\end{aligned}$$
+        </dt>
+      </dl>
+      <div style="text-align: center;" id="counterCard">
+        ___________________
+        <p id="footer"></p>
+        <p id="email"></p>
+      </div>
+    </div>
+    <div style="text-align: center;" id="counterCard">
+      ___________________
+      <p id="footer"></p>
+      <p id="email"></p>
+    </div>
+  </div>
+    <script>
+      let iFrame = document.getElementById("iframe");
+      let viewButton = document.getElementById("viewButton");
+      function viewFunction() {
+        viewButton.href = iFrame.src;
+        viewButton.target = "_blank";
+
+      }
+    </script>
+    <script type="module" src="../../footer.js"></script>
+</body>
+
+</html>
