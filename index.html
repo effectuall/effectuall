@@ -1,204 +1,295 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="files/icon.ico" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Physics Interactive Learning Simulations in 3D</title>
-  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/icon.ico" />
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <title>Learning Physics with 3D Interactive Simulations </title>
+  
   <!-- meta tags example -->
   <meta name="keywords"
     content=" physics, 3D, interactive, simulation, webgl, threejs, effectual, learning, science, freelance, creative" />
   <meta name="author" content="sajith EP, effectuallearning@gmail.com" />
   <meta name="developer" content="" />
+
+  <script type="importmap">
+			{
+				"imports": {
+					"three": "../../build/three.module.js",
+					"three/addons/": "../jsm/"
+				}
+			}
+		</script>
+  <script type="module" crossorigin src="/assets/index-eba68472.js"></script>
+  <link rel="stylesheet" href="/assets/index-b6cd6c7b.css">
 </head>
 
 <body>
-  <div id="home">
+  <div id="header">
+
     <div class="topnav" id="myTopnav">
-      <a href="#index.html"> <img src="files/effectuall.svg" class="title" alt="Effectual logo"></a>
-      <a href="#home">Home</a>
-      <a href="Simulations/index.html">Simulations</a>
-      <a href="#aboutUs">About Us</a>
+      <a href="https://effectuall.com/"> <img src="/effectuall.svg" class="title" alt="Effectual logo"></a>
+      <a href="#home" onclick="myHome()">Home</a>
+      <a href="#simulations" onclick="mySims()">Simulations</a>
+      <a href="#aboutUs" onclick="aboutUs()">About Us</a>
       <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-        <img src="files/ic_menu_black_24dp.svg" alt="previewToggleer">
+        <img src="/ic_menu_black_24dp.svg" alt="previewToggleer">
       </a>
+    </div>
+  </div>
+
+  <div id="app">
+    <div>
+      <h1>Physics Interactive 3D Simulations</h1>
+      <h3>Effect of Visual Learning - Effectual Learning </h3>
+      <p>A virtual 3D Learning Platform</p>
+      <h2>Explore. Evaluate. Envision.</h2>
+      <p> Effectuall provides an effective and powerful 3D learning platform for
+        Interactive Physics Simulations. It introduces a teaching methodology that uses technology as access points
+        for guiding students in science.</p>
+
+      <a href="https://effectuall.github.io/" target="_blank"><button>Find Out More</button></a>
+    </div>
+    <!-- //donate -->
+    <div>
+      <form action="https://www.paypal.com/donate" method="post" target="_top">
+        <input type="hidden" name="hosted_button_id" value="ZTQ5RKXFNFB26" />
+        <input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_SM.gif" border="0" name="submit"
+          title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+
+      </form>
+    </div>
+  </div>
+  <div id="scene">
+    <div id="info"> Toggle Buttons<br>
+      <button id="labels">Labels</button>
+      <button id="rays">Ray Diagram</button>
+    </div>
+
+    <div id="container">
+      <div id="menu">
+        <div id="part"> </div>
+        <div id="describe"> </div>
+      </div>
+    </div>
+  </div>
+  <div id="content">
+    <div>
+      <p>
+        USE MOUSE
+        <li>
+          to zoom and pan around in the 3D space
+        </li>
+        <li>
+          to click for the microscope parts description
+        </li>
+      </p>
     </div>
 
 
-    <div id="app" class="app">
+    <div id="Simulations">
       <div>
-        <h1>Physics Interactive 3D Simulations</h1>
-        <h3>Effect of Visual Learning - Effectual Learning </h3>
-        <p>A virtual 3D Learning Platform</p>
-        <h2>Explore. Evaluate. Envision.</h2>
-        <p> Effectuall provides an effective and powerful 3D learning platform for
-          Interactive Physics Simulations. It introduces a teaching methodology that uses technology as access points
-          for guiding students in science.</p>
+        <h1 style="font-size: 26px; text-transform: uppercase;">List of Simulations</h1>
 
-        <a href="https://effectuall.github.io/" target="_blank"><button>Find Out More</button></a>
+        <div id="sims">
+
+        </div>
       </div>
-      <!-- //donate -->
-      <div>
+
+    </div>
+
+
+    <h3>Compound Microscope with Interactive 3D Simulations</h3>
+
+    <div id="part1" class="content">
+      <h2>Working Principle of a Compound Microscope </h2>
+
+      <p>Optical system of a microscope includes
+      <ol>
+        <li>Objective lens</li>
+        <li>Eyepieces</li>
+      </ol>
+      During observation, specimen (object) is placed near the focal plane of the objective lens and a
+      magnified real image of the specimen is first created near the focal plane of the eyepiece.
+      Eyepiece then acts as a magnifier to further magnify the image. Finally a magnified, virtual, inverted image is
+      seen by the observer.
+      </p>
+      <dl>
+        <dt>
+          &#160; &#xa0; &#10148; Compound Microscope forms a virtual, magnified and inverted image.
+        </dt>
+      </dl>
+
+      <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset
+        concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum.
+        Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+    </div>
+    <div id="part2" class="content">
+
+      <h2>Magnification of a Microscope</h2>
+      <p>In a microscope, each lens produces a magnification that multipies the height of the image
+        (enlarges the image). It is apparent that the overall magnification, \(m\) of the microscope is
+        the product of the individual <a
+          href="https://openstax.org/books/college-physics/pages/26-4-microscopes">magnifications</a>:
+        $$ m = m_{o}m_{e} $$
+
+        where \(m_{o} \) is the magnification of the objective and \(m_{e} \) is the
+        magnification of the eyepiece.
+
+        Both objective and eyepiece contribute to the overall magnification.
+
+      </p>
+
+      <dl>
+        <dt>
+          <h3> &#160; &#xa0; &#10148; Magnification of a microscope, \(\boldsymbol{m = m_{o}m_{e}} \) </h3>
+        </dt>
+      </dl>
+
+
+    </div>
+    <div id="part3" class="content">
+
+      <h2>Resolution of a Microscope </h2>
+      <p>
+        <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/mid/NIHMS363450/"> Resolution of a microscope</a> is its
+        ability to clearly magnify two closeby objects.
+        The spatial resolution of a well designed optical microscope is mainly determined
+        by its objective lens and
+        is given by the Rayleigh equation as follows;
+        $$\Delta r_{0} = 0.62 \frac{\lambda }{n \sin \alpha}$$
+        where (\(\lambda\)), is the wavelength of the light source; \(n\)
+        is the refractive index of the medium between the specimen and the lens, \(\alpha\) is half-angle
+        aperature and \(n \sin \alpha\) is the numerical aperature (NA) of the objective lens.
+      </p>
+
+      <dl>
+        <dt>
+          <h3>&#160; &#xa0; &#10148; Resolution of a microscope depends on \(\lambda\) and \(n\)
+            for a microscope of given numeric aperature, NA.</h3>
+        </dt>
+      </dl>
+      <h3> Practical limitations of a light microscope</h3>
+      <ul style="list-style-type:circle;">
+        <li>Use of visible light with the wavelength between 390 nm and 790 nm. </li>
+        <li>Maximum reachable aperature with the haif-angle of 70-75 degree.</li>
+        <li>Requirement to use immersion methods with water or oil to increase the refractive index.</li>
+      </ul>
+      <dl>
+        <dt>
+          &#160; &#xa0; &#10148; <strong>Resolution of a conventional light microscope cannot exceed 200 nm.</strong>
+        </dt>
+      </dl>
+
+    </div>
+    <div id="part4" class="content">
+
+      <h2>Electron Microscope</h2>
+      <p>As the wavelength of electronic beam is much shorter than the visible light in several orders of magnitude,
+        the resolution of a microscope using electronic beam can reach \(\sim 0.3\) nm.
+
+        For this reason, electron microscope build on the principles of electronic optics, has very high magnification
+        power and can image the fine structures of objects.
+      </p>
+      <h3>Comparison of resolution</h3>
+      <ul style="list-style-type:none;">
+        <li>&#10148; <strong> Eye \(\sim 0.1\) mm,</strong> </li>
+        <li>&#10148; <strong> Light microscope \(\sim 0.2\) &#181;m,</strong></li>
+        <li>&#10148; <strong> Electron microscope \(\sim 0.3\) nm. </strong> </li>
+      </ul>
+
+    </div>
+    <div id="aboutUs">
+      <p>The ensemble of Physics Interactive Simulations in 3D are developed using open source Three.js-JavaScript
+        3D Library.</p>
+
+      <p><strong>Three.js</strong> is a cross-browser JavaScript library and application programming interface used to
+        create and
+        display animated 3D computer graphics in a web browser using WebGL. The source code is hosted in a
+        repository on GitHub. Three.js allows the creation of graphical processing unit (GPU)-accelerated 3D
+        animations using the JavaScript language</p>
+      <div class="aSide" id="popup">
+
+        <h2>Lets get in touch. Send me a message: </h2>
+        <a href="mailto:effectuallearning@gmail.com">SEND MESSAGE</a><br>
+        <a href="https://www.youtube.com/channel/UCFSMjn_YssD7Y1ybBwZb3mw"> Subscribe Here for the Youtube
+          Channel</a><br>
+
         <form action="https://www.paypal.com/donate" method="post" target="_top">
           <input type="hidden" name="hosted_button_id" value="ZTQ5RKXFNFB26" />
           <input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_SM.gif" border="0" name="submit"
             title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-          <img alt="" border="0" src="https://www.paypal.com/en_IN/i/scr/pixel.gif" width="1" height="1" />
+
         </form>
       </div>
-     
-      <!-- //list of Simulations -->
-      <div id="Simulations">
-        <div>
-          <h1 style="font-size: 26px; text-transform: uppercase;">List of Simulations</h1>
-
-          <div id="sims">
-
-          </div>
-        </div>
-      </div>
-
-      <div class="aSide">
-        <iframe src="Simulations/microscope.html" name="iframe" id="iframe" title="Iframe Display"></iframe>
-        <a id="viewButton" onclick="viewFunction()"> <img src="files/ic_code_black_24dp.svg" alt="viewer"></a>
-      </div>
-      <div>
-        <p>
-          USE MOUSE
-          <li>
-            to zoom and pan around in the 3D space
-          </li>
-          <li>
-            to click for the microscope parts description
-          </li>
-        </p>
-      </div>
 
 
-      <div class="content" id="aboutUs">
-        <p>The ensemble of Physics Interactive Simulations in 3D are developed using open source Three.js-JavaScript
-          3D Library.</p>
-
-        <p><strong>Three.js</strong> is a cross-browser JavaScript library and application programming interface used to
-          create and
-          display animated 3D computer graphics in a web browser using WebGL. The source code is hosted in a
-          repository on GitHub. Three.js allows the creation of graphical processing unit (GPU)-accelerated 3D
-          animations using the JavaScript language</p>
-          <div class="aSide" id="popup">
-           
-                <h2>Lets get in touch. Send me a message: </h2>
-                <a href="mailto:effectuallearning@gmail.com"><img src="files/send_black_24dp.svg" style="margin-bottom: 0; padding-right: 10px ;" alt="email">SEND MESSAGE</a>
-                              
-              </div>
-          
-        <h3>About Us</h3>
-        <p>All of the simulations in this site are created by me, <a href="mailto:effectuallearning@gmail.com">E.P
-            Sajitha</a>. Please send feedback about the simulation contents, visualisations
-          or suggestions for new simulations and consider supporting me.</p>
-          <div class="aSide">
-          <a href="https://www.youtube.com/channel/UCFSMjn_YssD7Y1ybBwZb3mw"> Subscribe Here for the Youtube Channel</a><br>
-       
-            <form action="https://www.paypal.com/donate" method="post" target="_top">
-              <input type="hidden" name="hosted_button_id" value="ZTQ5RKXFNFB26" />
-              <input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_SM.gif" border="0" name="submit"
-                title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-              <img alt="" border="0" src="https://www.paypal.com/en_IN/i/scr/pixel.gif" width="1.5" height="1.5" />
-            </form>
-          </div>      
-
-      </div>
     </div>
-    <div style="text-align: center;" id="counterCard">
-      ___________________
-      <p id="footer"></p>
-      <p id="email"></p>
-    </div>
-    <script type="module">
+  </div>
 
-      import files from "./Simulations/files.json" assert { type: 'json' };
+  <div style="text-align: center;" id="counterCard">
+    <h3>About Us</h3>
+    _________________________________________
+    <p>All of the simulations in this site are created by me, <a href="mailto:effectuallearning@gmail.com">E.P
+        Sajitha</a>. Please send feedback about the simulation contents, visualisations
+      or suggestions for new simulations and consider supporting me.</p>
 
-      const iframe = document.getElementById('iframe');
-      const links = {};
-      let P = "https://effectuall.github.io/Simulations/"
-      const row = document.getElementById('sims');
 
-      for (const key in files) {
-        const section = files[key];
-        const each = document.createElement('div');
-        each.className = "dropdown";
+    <p id="footer"></p>
+    <p id="email"></p>
+  </div>
 
-        const div = document.createElement('div');
-        div.className = "dropdown-content";
+  <!-- //scroll to view + responsive header -->
+  <script>
+    function myHome() {
+      let X = document.getElementById("app");
 
-        div.id = "A";
-        for (let i = 0; i < section.length; i++) {
-          const X = `<button class="dropbtn"> ${key} </button>`;
-          each.innerHTML = X.trim();
-          each.append(div)
-          const file = section[i]
-          myAdd(div, file, iframe)
-        }
-        row.append(each);
+      X.scrollIntoView({ behavior: "smooth"});
+    }
+
+    function aboutUs() {
+      let X = document.getElementById("aboutUs");
+
+      X.scrollIntoView({ behavior: "smooth" });
+    }
+
+    function mySims() {
+      let X = document.getElementById("Simulations");
+
+      X.scrollIntoView({ behavior: "smooth" });
+    }
+
+    let x = document.getElementById("myTopnav");
+    function myFunction() {
+
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
       }
-      // console.log(row)
+    }
+    window.onscroll = function () { myFun() };
+    let sticky = x.offsetTop;
 
-      function myAdd(div, a, viewer) {
-        const X = document.createElement('a');
-
-        X.target = viewer.name;
-
-        viewer.focus();
-        viewer.style.display = 'unset';
-
-        X.href = P + a + ".html";
-        X.innerHTML = getName(a);
-        div.append(X)
-        // console.log(X)
+    function myFun() {
+      if (window.pageYOffset >= sticky) {
+        x.classList.add("sticky")
+      } else {
+        x.classList.remove("sticky");
       }
+    }
+  </script>
 
-      function getName(file) {
 
-        const name = file.split('_');
-        name.shift();
-        return name.join('  ');
+  
 
-      }
-    </script>
-    <script>
-
-      let x = document.getElementById("myTopnav");
-      function myFunction() {
-
-        if (x.className === "topnav") {
-          x.className += " responsive";
-        } else {
-          x.className = "topnav";
-        }
-      }
-      window.onscroll = function () { myFun() };
-      let sticky = x.offsetTop;
-
-      function myFun() {
-        if (window.pageYOffset >= sticky) {
-          x.classList.add("sticky")
-        } else {
-          x.classList.remove("sticky");
-        }
-      }
-
-      let iFrame = document.getElementById("iframe");
-      let viewButton = document.getElementById("viewButton");
-      function viewFunction() {
-
-        viewButton.href = iFrame.src;
-        viewButton.target = "_blank";
-
-      }
-      
-    </script>
-    <script type="module" src="footer.js"></script>
+  <!-- //create menu for other simulations -->
+  
+  <!-- tween animation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/20.0.0/tween.umd.js"></script>
+  
 </body>
 
 </html>
