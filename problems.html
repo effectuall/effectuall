@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" sizes="any" type="image/svg+xml" href="/icon.ico" />
+    <title>Physics interactive simulations</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    
+
+
+  <script type="module" crossorigin src="/assets/blogs-aa6f4d2e.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/modulepreload-polyfill-3cfb730f.js">
+  <link rel="stylesheet" href="/assets/style2-1ceced3a.css">
+</head>
+
+<body>
+
+    <div id="panel">
+        <div id="header">
+            <h1><a href="index.html" id="logo"><img src="/effectuall.svg" width="100px" alt="Effectual logo"></a></h1>
+
+            <div id="sections">
+                <span class="selected">Problems</span>
+                <a href="sims.html">Simulations</a>
+            </div>
+
+            <div id="expandButton"></div>
+        </div>
+
+
+        <div id="panelScrim"></div>
+
+        <div id="contentWrapper">
+
+            <div id="inputWrapper">
+                <input placeholder="" type="text" id="filterInput" autocorrect="off" autocapitalize="off"
+                    spellcheck="false" />
+                <div id="exitSearchButton"></div>
+            </div>
+            <div id="home">
+                <a href="index.html">
+                    <img src="/ic_home_black_24dp.svg" width="25" height="25" />
+                </a>
+            </div>
+
+            <div id="content">
+                <!-- <img id="previewsToggler" src="/thumbnails.svg" width="20" height="20" /> -->
+            </div>
+        </div>
+
+
+    </div>
+
+    <iframe id="viewer" name="viewer" allow="fullscreen; xr-spatial-tracking;"></iframe>
+    <a id="button" target="_blank"><img src="/ic_code_black_24dp.svg"></a>
+    <script>
+        function myIndex() {
+            let X = document.getElementById("logo");
+            window.location.replace('/');
+        }
+
+        function myFunction() {
+            let x = document.getElementById("icon");
+            console.log(x.className)
+            if (x.className === "navbar") {
+                x.className += " sidepanel";
+            } else {
+                x.className = "navbar";
+            }
+        }
+
+    </script>
+
+    
+    <template id="PlaceholderHTML">
+        <!DOCTYPE html>
+        <html lang="en">
+
+        <head>
+            <meta charset="utf-8">
+            <title>three.js examples</title>
+            <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+            
+            <style>
+                html,
+                body {
+                    width: 100%;
+                    height: 100%;
+                    color: #e0dcdc;
+                }
+
+                article {
+                    position: absolute;
+                    top: 0px;
+                    right: 0px;
+                    padding: 0 10px 0 10px;
+                    width: 100%;
+                    box-sizing: border-box;
+                    text-align: left;
+                }
+            </style>
+        </head>
+
+        <body>
+            <article>
+
+
+                <div>
+                    <div>
+                        <p>Two charged spheres 20 cm apart attract each other with a force of 22.50 N.
+                            What
+                            force results from each of the following changes, considered separately?</p>
+                        <p>
+                        <ol type="a">
+                            <li>
+                                Both charges are doubled and the distance remains the same.
+                            </li>
+                            
+                            <li>
+                                The separation is increased to 30 cm.
+                            </li>
+
+                            <li>
+                                if one has twice the charge as the other
+                            </li>
+                            
+                        </ol>
+                        </p>
+                    </div>
+                        <iframe
+                            style=" position: static;   width:75%; height:80vh; padding-right: 25px; float: none;"
+                            id="viewFrame" name="viewFrame"
+                            src="https://effectuall.github.io/Simulations/Electricity_Coulomb's_Law.html"></iframe>
+
+                        
+
+                  <div>
+                    <h2>Questions:</h2>
+                    <p>
+                    <ol type="i">
+                        <li>
+                            What is the magnitude of the force, a 1.5 &times; 10<sup>-6</sup> C charge exerts on a 3.2 &times; 10<sup>-5</sup> C charge
+                            located 1.5 m away?
+
+                        </li>
+                        <h2>Solution:  The magnitude of the force, F = 0.19 N </h2>
+                       
+                        <p>Charge, q<sub>1</sub> = 1.5 &times; 10<sup>-6</sup> C <br>
+                            Charge, q<sub>2</sub> = 3.2 &times; 10<sup>-5</sup> C = 32 &times; 10<sup>-6</sup> C <br>
+                            Distance between q<sub>1</sub> and q<sub>2</sub>, r = 1.5 m = 150 &times; 10<sup>-2</sup> m<br>
+                      </p>
+                      <p>  If these values are given as input in the 3D console, the magnitude of the force of repulsion, F = 0.19 N </p>
+                        <li>
+                            Two equal charges of magnitude 11 &times; 10<sup>-7</sup> C experience an electrostatic force of
+                           10   &times; 10<sup>-2</sup> N. How far apart are the centers of the two charges?
+                        </li>
+                        <h2>Solution:  The distance between q<sub>1</sub> and q<sub>2</sub>, r = 33 &times; 10<sup>-2</sup> m</h2>
+                       
+                        <p>Charge, q<sub>1</sub> = 11 &times; 10<sup>-7</sup> C = 1.1 &times; 10<sup>-6</sup> C <br>
+                            Charge, q<sub>2</sub> = 11 &times; 10<sup>-7</sup> C = 1.1 &times; 10<sup>-6</sup> C <br>
+                            The magnitude of the force, F = 0.1 N <br>
+                            Then, distance between q<sub>1</sub> and q<sub>2</sub>, r = 33 &times; 10<sup>-2</sup> m<br>
+                      </p>
+                      <!-- <p>  If these values are given as input in the 3D console, the magnitude of the force of repulsion, F = 0.19 N </p>
+                        <li>
+                            The force of electrostatic repulsion between two small positively charged objects, A and B, is
+                            3.6 &times; 10<sup>-5</sup> N when AB = 0.12 m. What is the force of repulsion if AB is increased to
+                            <br>a) 0.24 m b) 0.36 m
+                            
+                        </li> -->
+                    </ol>
+
+                    </p>
+
+                  </div>
+                    
+                </div>
+            </article>
+        </body>
+
+        </html>
+    </template>
+
+</body>
+
+</html>

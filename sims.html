@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<link rel="shortcut icon"  sizes="any" type="image/svg+xml" href="/icon.ico" />
+	<title>Physics interactive simulations</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	
+
+
+  <script type="module" crossorigin src="/assets/nested-3bb26b10.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/modulepreload-polyfill-3cfb730f.js">
+  <link rel="stylesheet" href="/assets/style2-1ceced3a.css">
+</head>
+
+<body>
+
+	<div id="panel">
+		<div  id="header">
+			<h1><a href="index.html" id="logo"><img src="/effectuall.svg" width="100px" alt="Effectual logo"></a></h1>
+
+			<div id="sections">
+				<a href="problems.html"  >Problems</a>
+				<span class="selected">Simulations</span>
+			</div>
+
+			<div id="expandButton"></div>
+		</div>
+
+
+			<div id="panelScrim"></div>
+			
+			<div id="contentWrapper">
+
+				<div id="inputWrapper">
+					<input placeholder="" type="text" id="filterInput" autocorrect="off" autocapitalize="off" spellcheck="false" />
+					<div id="exitSearchButton"></div>
+				</div>
+				<div id="home">  
+					<a href="javascript:void(0);"  onclick="viewChange()">
+						<img  src="/ic_home_black_24dp.svg" width="25" height="25" />
+					</a>
+				</div>
+				
+				<div id="content">
+					<!-- <img id="previewsToggler" src="/thumbnails.svg" width="20" height="20" /> -->
+				</div>
+			</div>
+     
+
+		</div>
+		
+			<iframe id="viewer" name="viewer" allow="fullscreen; xr-spatial-tracking;"  src="https://effectuall.github.io/Simulations/Mechanics_Circular_Motion.html"></iframe>
+			<a id="button"  target="_blank" ><img src="/ic_code_black_24dp.svg"></a>
+<script>
+	function myIndex() {
+      let X = document.getElementById("logo");
+      window.location.replace ('/');
+    }
+	let X = document.getElementById("viewer");
+	function viewChange() {
+		console.log('problems')
+		viewer.target="viewer"
+	//   window.location.hash = 'intro.html';
+    	viewer.src = 'https://effectuall.github.io/Simulations/Mechanics_Gravitational_Force.html';
+        viewer.style.display = 'unset';
+    }
+	function myFunction() {
+      let x = document.getElementById("icon");
+	  console.log(x.className )
+	  if (x.className === "navbar") {
+        x.className += " sidepanel";
+      } else {
+        x.className = "navbar";
+      }
+    }
+
+</script>
+	
+	
+	<!-- <script src="script.js"></script> -->
+
+</body>
+
+</html>
