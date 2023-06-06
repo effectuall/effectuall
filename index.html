@@ -5,7 +5,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
   <link rel="icon" type="image/svg+xml" href="/icon.ico" />
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
   <title>Learning Physics with 3D Interactive Simulations </title>
   
   <!-- meta tags example -->
@@ -22,26 +21,39 @@
 				}
 			}
 		</script>
-  <script type="module" crossorigin src="/assets/index-17c88b82.js"></script>
-  <link rel="stylesheet" href="/assets/index-6d9d6f25.css">
+  <script type="module" crossorigin src="/assets/main-b851cf99.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/modulepreload-polyfill-3cfb730f.js">
+  <link rel="stylesheet" href="/assets/index-e5abcb2b.css">
 </head>
 
 <body>
-  <div  class="content">
-  <div id="header">
 
-    <div class="topnav" id="myTopnav">
-      <a href="https://effectuall.com/"> <img src="/effectuall.svg" class="title" alt="Effectual logo"></a>
-      <a href="#home" onclick="myHome()">Home</a>
-      <a href="#simulations" onclick="mySims()">Simulations</a>
-      <a href="#aboutUs" onclick="aboutUs()">About Us</a>
-      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-        <img src="/ic_menu_black_24dp.svg" alt="previewToggleer">
-      </a>
-    </div>
-  </div>
+  
+   
 
-  <div id="app" class="app">
+  <div id="home">
+    <nav>
+      <div class="logo">
+          <img decoding="async" href="" src="/effectuall.svg" alt="Logo Image">
+      </div>
+      <div class="hamburger">
+          <div class="bars1"></div>
+          <div class="bars2"></div>
+          <div class="bars3"></div>
+      </div>
+      <ul class="nav-links">
+          <li><a href="problems.html">Problems</a></li>
+          <li><a href="sims.html">Simulations</a></li>
+          <li><a href="#Simulations">3D Interactive</a></li>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#aboutUs" >Contact Us</a></li>
+          <li><button class="login-button" href="#">Sign In</button></li>
+      </ul>
+  </nav>
+ 
+
+    <div class="content">
+      <div id="app" class="app">
     <div>
       <h1>Physics Interactive 3D Simulations</h1>
       <h3>Effect of Visual Learning - Effectual Learning </h3>
@@ -77,6 +89,7 @@
     </div>
   </div>
   <div id="content" style="text-align: center; font-weight:lighter;" >
+    <div id="Simulations">
     <div>
       <h1 style="font-size: 26px; text-transform: uppercase;">Compound Microscope </h1><h3> Interactive 3D Simulations</h3>
       <p>
@@ -91,9 +104,9 @@
     </div>
 
 
-    <div id="Simulations">
+  
       <div>
-        <h1 style="font-size: 26px; text-transform: uppercase;">List of Simulations</h1>
+        <h1 style="font-size: 26px; text-transform: uppercase;">List of Interactive 3D Physics Simulations</h1>
 
         <div id="sims">
 
@@ -244,53 +257,61 @@
   </div>
 </div>
   <!-- //scroll to view + responsive header -->
-  <script>
-    function myHome() {
-      let X = document.getElementById("app");
+ 
 
-      X.scrollIntoView({ behavior: "smooth"});
-    }
+    <script src="footer.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    <script>
+      function myIndex() {
+           let X = document.getElementById("logo");
+           console.log(X,location.host)
+           X.src = '/index.html'
+           window.location.src = '/#home'
+         }
+     
+     
+         function myHome() {
+           let X = document.getElementById("app");
+     
+           X.scrollIntoView({ behavior: "smooth"});
+         }
+     
+         function aboutUs() {
+           let X = document.getElementById("aboutUs");
+     
+           X.scrollIntoView({ behavior: "smooth" });
+         }
+     
+         function mySims() {
+           let X = document.getElementById("Simulations");
+     
+           X.scrollIntoView({ behavior: "smooth" });
+         }
+     
+         const hamburger = document.querySelector(".hamburger");
+const navLinks = document.querySelector(".nav-links");
+const link = document.querySelectorAll(".nav-links li");
 
-    function aboutUs() {
-      let X = document.getElementById("aboutUs");
+hamburger.addEventListener('click', ()=>{
+   //Links
+    navLinks.classList.toggle("open");
+    link.forEach(link => {
+        link.classList.toggle("fade");
+    });
 
-      X.scrollIntoView({ behavior: "smooth" });
-    }
+    //Animation
+    hamburger.classList.toggle("toggle");
+});
 
-    function mySims() {
-      let X = document.getElementById("Simulations");
-
-      X.scrollIntoView({ behavior: "smooth" });
-    }
-
-    let x = document.getElementById("myTopnav");
-    function myFunction() {
-
-      if (x.className === "topnav") {
-        x.className += " responsive";
-      } else {
-        x.className = "topnav";
-      }
-    }
-    window.onscroll = function () { myFun() };
-    let sticky = x.offsetTop;
-
-    function myFun() {
-      if (window.pageYOffset >= sticky) {
-        x.classList.add("sticky")
-      } else {
-        x.classList.remove("sticky");
-      }
-    }
-  </script>
-
-
-  
+       </script>
+     
+     <!-- tween animation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/20.0.0/tween.umd.js"></script>
+ 
 
   <!-- //create menu for other simulations -->
   
-  <!-- tween animation -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/20.0.0/tween.umd.js"></script>
+ 
   
 </body>
 
