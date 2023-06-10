@@ -7,13 +7,12 @@
     <title>Physics interactive simulations</title>
     <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
     
-     <!-- meta tags example -->
-  <meta name="keywords"
-  content=" physics, 3D, interactive, simulation, webgl, threejs, effectual, learning, science, freelance, creative, mechanics, electicity, magnetism, thermodynamics, optics, quantum physics, pressure, kinetic theory of gases, Coulomb's law, Periodic Motion" />
-<meta name="author" content="sajith EP, effectuallearning@gmail.com" />
-<meta name="developer" content="" />
+    <!-- meta tags example -->
+    <meta name="keywords"
+        content=" physics, 3D, interactive, simulation, webgl, threejs, effectual, learning, science, freelance, creative, mechanics, electicity, magnetism, thermodynamics, optics, quantum physics, pressure, kinetic theory of gases, Coulomb's law, Periodic Motion" />
+    <meta name="author" content="sajith EP, effectuallearning@gmail.com" />
+    <meta name="developer" content="" />
     <style>
-      
         #threeDisplay {
             width: 100%;
             position: relative;
@@ -25,8 +24,8 @@
 
         #threeDisplay iframe {
             height: 650px;
-            width: 90%;
-            padding: 0px 30px;
+            width: 95%;
+            padding: 0px 10px;
         }
 
         #read {
@@ -37,6 +36,7 @@
         #answer {
             display: none;
         }
+
         #producttable {
             margin-top: 5%;
             padding: 5px 30px;
@@ -66,7 +66,7 @@
         }
     </style>
 
-  <script type="module" crossorigin src="/assets/blogs-f205f197.js"></script>
+  <script type="module" crossorigin src="/assets/blogs-ca56ac9a.js"></script>
   <link rel="modulepreload" crossorigin href="/assets/modulepreload-polyfill-3cfb730f.js">
   <link rel="stylesheet" href="/assets/style2-1ceced3a.css">
 </head>
@@ -102,10 +102,10 @@
             </div>
 
             <div id="content">
-                
+
                 <!-- <img id="previewsToggler" src="/thumbnails.svg" width="20" height="20" /> -->
             </div>
-            
+
         </div>
 
 
@@ -113,46 +113,51 @@
 
     <div id="viewer">
         <div id="problemDisplay" style="padding: 20px 20px;">
-           
 
-           
+
+
             <article>
-                <h1><div id="caption">Select problems from a topic, in the left panel, to visualise here.</div> </h1>
+                <h1>
+                    <div id="caption">Select problems from a topic, in the left panel, to visualise here.</div>
+                </h1>
                 <div id="problem"> Two charged spheres 20 cm apart attract each other with a force of 22.50 N.
-                    What force results from each of the following changes, considered separately?</div>  
+                    What force results from each of the following changes, considered separately?</div>
                 <div id="choice">
 
                     <ol>
                         <li>
                             Both charges are doubled and the distance remains the same.
                         </li>
-        
+
                         <li>
                             The separation is increased to 30 cm.
                         </li>
-        
+
                         <li>
                             if one has twice the charge as the other
                         </li>
                         <li>
-                            What is the magnitude of the force, a 1.5 &times; 10<sup>-6</sup> C charge exerts on a 3.2 &times; 10<sup>-5</sup> C charge located 1.5 m away?
-                        </li>	
+                            What is the magnitude of the force, a 1.5 &times; 10<sup>-6</sup> C charge exerts on a 3.2
+                            &times; 10<sup>-5</sup> C charge located 1.5 m away?
+                        </li>
                     </ol>
                 </div>
                 <div id="view"> <button id="hint" style="display: none;"><a>Hint</a></button></div>
-                    <div id="answer"></div>
-                    <div id="select">
+                <div id="answer"></div>
+                <div id="select">
 
-                    </div>
-                   
-                    <div>
-                        <p id='read' style="display: block;">The "Force" between the two charges can be visualized by adjusting the parameters in the 3D environment below. The magnitude of the force of repulsion for the last problem, F = 0.19 N</p>
-                    </div> 
-               
-               
+                </div>
+
+                <div>
+                    <p id='read' style="display: block;">The "Force" between the two charges can be visualized by
+                        adjusting the parameters in the 3D environment below. The magnitude of the force of repulsion
+                        for the last problem, F = 0.19 N</p>
+                </div>
+
+
             </article>
 
-           
+
         </div>
         <div id="threeDisplay">
             <p></p>
