@@ -6,7 +6,7 @@
     <link rel="shortcut icon" sizes="any" type="image/svg+xml" href="/icon.ico" />
     <title>Physics interactive simulations</title>
     <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style2.css">
+    
     <!-- meta tags example -->
     <meta name="keywords"
         content=" physics, 3D, interactive, simulation, webgl, threejs, effectual, learning, science, freelance, creative, mechanics, electicity, magnetism, thermodynamics, optics, quantum physics, pressure, kinetic theory of gases, Coulomb's law, Periodic Motion" />
@@ -66,6 +66,9 @@
         }
     </style>
 
+  <script type="module" crossorigin src="/assets/blogs-e3528483.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/modulepreload-polyfill-3cfb730f.js">
+  <link rel="stylesheet" href="/assets/style2-1ceced3a.css">
 </head>
 
 <body>
@@ -183,199 +186,7 @@
 
     </script>
 
-    <script type="module">
-        import ques from "./eg.json" assert { type: 'json' };
-        import tags from "./tags.json" assert { type: 'json' };
-
-        const content = document.getElementById('content');
-        const expandButton = document.getElementById('expandButton');
-        const panelScrim = document.getElementById('panelScrim');
-        const exitSearchButton = document.getElementById('exitSearchButton');
-        const container = document.createElement('div');
-        let web = "https://effectuall.github.io/Simulations/"
-
-        let PROBLEMS = [], TOPICS = []
-        init();
-
-        async function init() {
-
-            content.appendChild(container);
-            content.classList.toggle('minimal');
-
-
-            const files = ques;
-
-            for (const key in files) {
-                let X = files[key];
-
-                for (const P in X) {
-                    TOPICS.push(P)
-                    PROBLEMS.push(X[P])
-                }
-            }
-            const header = document.createElement('h2');
-            header.textContent = 'Problems from';
-            container.appendChild(header);
-
-            for (let i = 0; i < TOPICS.length; i++) {
-                // console.log(TOPICS, PROBLEMS)
-                const section = PROBLEMS[i];
-                const template = `
-                <div class="card">
-					<a href="#${TOPICS[i]}" id="${TOPICS[i]}">
-                        <div class="cover">
-							
-						</div>
-						<div class="title">${TOPICS[i]}</div>
-						
-					</a>
-				</div>			  
-			    `;
-                const div = document.createElement('div');
-                div.innerHTML = template.trim();
-                div.innerHTML = TOPICS[i]
-                const L = div.firstChild;
-                container.appendChild(L);
-                for (let i = 0; i < section.length; i++) {
-                    let topic = section[i]['Topic'], M = section[i]['Main'];
-                    let problem = section[i]['Problem'];
-                    console.log(i, section, topic, problem)
-                    let Q = problem[0]['Question'], C = problem[0]['Choice'], A = problem[0]['Answer'], R = problem[0]['Remark'];
-                    createProblem(Q, A, R, C, M, topic)
-                }
-
-            }
-
-
-
-            if (viewer.src === '') {
-                // viewer.srcdoc = document.getElementById('productrow').innerHTML;
-                viewer.srcdoc = document.getElementById('PlaceholderHTML').innerHTML;
-                viewer.style.display = 'unset';
-
-            }
-
-            expandButton.addEventListener('click', function (event) {
-
-                event.preventDefault();
-                panel.classList.toggle('open');
-
-            });
-
-            panelScrim.onclick = function (event) {
-
-                event.preventDefault();
-                panel.classList.toggle('open');
-            };
-
-
-            exitSearchButton.onclick = function () {
-
-                filterInput.value = '';
-                updateFilter(files, tags);
-                panel.classList.remove('searchFocused');
-                
-                // content.classList.toggle('minimal');
-
-            };
-        }
-
-        function createProblem(Q, A, R, C, M, topic) {
-            let testQues = `
-                <article>
-                    
-                    <div id=Problem> <a> ${Q}</a></div>  
-                </article>
-                `
-            let testChoice = `
-                    <h1 id='answer'>
-                       Answer:-${A}
-                    </h1>
-                `
-            let testHint = `
-                <button id="hint"><a>Hint</a></button>
-                <div>
-                    <p id='read'>${R}</p>
-                    </div>        
-                    `
-            let st = document.createElement("ol");
-
-            let temp;
-            for (let i = 0; i < C.length; i++) {
-                let optn = C[i];
-                temp = `
-						<li id="${i}">
-							${optn}
-						</li>	
-				    `
-                st.innerHTML += temp.trim();
-            }
-
-            const choiceList = document.createElement('div');
-            choiceList.appendChild(st)
-            const template = `
-				<div class="card">
-					<a href="#${M}_${topic}" id="${M}_${topic}">
-						
-                        <div class="cover">
-							
-						</div>
-						<div class="title">${getName(topic)}</div>
-					</a>
-				</div>
-			`;
-            const div = document.createElement('div');
-            // div.className = "dropdown-content"
-            div.innerHTML = template.trim();
-            const link = div.firstChild;
-            container.appendChild(link);
-            if (M === "Electricity_Coulomb's_Law" && topic === "Problem_1") {
-                console.log('1q')
-                link.classList.add('selected');
-            }
-            link.addEventListener('click', function (event) {
-                let X = document.getElementById('choice');
-                X.innerHTML = "";
-                let Y = document.getElementById('read');
-                Y.innerHTML = "";
-                const x = document.querySelector("iframe");
-                x.src = '';
-                if (event.button !== 0 || event.ctrlKey || event.altKey || event.metaKey) return;
-
-                inputAction(link, M, testQues, choiceList, testChoice, testHint, topic)
-            });
-
-        }
-
-        function inputAction(link, topic, ques, list, choice, hint, sect) {
-            link.classList.add('selected');
-            // document.getElementById('caption').innerHTML = getName(topic);
-            document.getElementById('problem').innerHTML = ques;
-            document.getElementById('choice').appendChild(list)
-            document.getElementById('select').innerHTML = choice;
-
-            document.getElementById('view').innerHTML = hint;
-
-            document.getElementById('view').addEventListener('click', function (event) {
-                console.log(topic)
-                document.getElementById('viewFrame').src = web + topic
-                document.getElementById('read').style.display = 'block'
-                document.getElementById('answer').style.display = 'block'
-                document.getElementById('hint').style.display = 'none'
-
-            })
-        }
-
-        function getName(file) {
-
-            const name = file.split('_');
-            return name.join('  ');
-
-        }
-
-
-
-    </script>
+    
     <!-- <template id="productrow">
         <article>
             <p>Two charged spheres 20 cm apart attract each other with a force of 22.50 N.
