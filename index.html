@@ -12,15 +12,18 @@
     content=" physics, 3D, interactive, simulation, webgl, threejs, effectual, learning, science, freelance, creative, mechanics, electicity, magnetism, thermodynamics, optics, quantum physics, pressure, kinetic theory of gases, Coulomb's law, Periodic Motion" />
   <meta name="author" content="sajith EP, effectuallearning@gmail.com" />
   <meta name="developer" content="" />
+  <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
 
+
+  <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <script type="importmap">
-			{
-				"imports": {
-					"three": "../../build/three.module.js",
-					"three/addons/": "../jsm/"
-				}
-			}
-		</script>
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@<version>/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@<version>/examples/jsm/"
+      }
+    }
+  </script>
   <script type="module" crossorigin src="/assets/main-b851cf99.js"></script>
   <link rel="modulepreload" crossorigin href="/assets/modulepreload-polyfill-3cfb730f.js">
   <link rel="stylesheet" href="/assets/index-e5abcb2b.css">
@@ -28,289 +31,301 @@
 
 <body>
 
-  
-   
+
+
 
   <div id="home">
     <nav>
       <div class="logo">
-          <img decoding="async" href="" src="/effectuall.svg" alt="Logo Image">
+        <img decoding="async" href="" src="/effectuall.svg" alt="Logo Image">
       </div>
       <div class="hamburger">
-          <div class="bars1"></div>
-          <div class="bars2"></div>
-          <div class="bars3"></div>
+        <div class="bars1"></div>
+        <div class="bars2"></div>
+        <div class="bars3"></div>
       </div>
       <ul class="nav-links">
-          <li><a href="problems.html">Problems</a></li>
-          <li><a href="sims.html">Simulations</a></li>
-          <li><a href="#Simulations">3D Interactive</a></li>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#aboutUs" >Contact Us</a></li>
-          <li><button class="login-button" href="#">Sign In</button></li>
+        <li><a href="problems.html">Problems</a></li>
+        <li><a href="sims.html">Simulations</a></li>
+        <li><a href="#Simulations">3D Interactive</a></li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#aboutUs">Contact Us</a></li>
+        <li><button id="signbtn" class="login-button" href="#" data-netlify-identity-button></button></li>
       </ul>
-  </nav>
- 
+    </nav>
+
 
     <div class="content">
       <div id="app" class="app">
-    <div>
-      <h1>Physics Interactive 3D Simulations</h1>
-      <h3>Effect of Visual Learning - Effectual Learning </h3>
-      <p>A virtual 3D Learning Platform</p>
-      <h2>Explore. Evaluate. Envision.</h2>
-      <p> Effectuall provides an effective and powerful 3D learning platform for
-        Interactive Physics Simulations. It introduces a teaching methodology that uses technology as access points
-        for guiding students in science.</p>
+        <div>
+          <h1>Physics Interactive 3D Simulations</h1>
+          <h3>Effect of Visual Learning - Effectual Learning </h3>
+          <p>A virtual 3D Learning Platform</p>
+          <h2>Explore. Evaluate. Envision.</h2>
+          <p> Effectuall provides an effective and powerful 3D learning platform for
+            Interactive Physics Simulations. It introduces a teaching methodology that uses technology as access points
+            for guiding students in science.</p>
 
-      <a href="https://effectuall.github.io/" target="_blank"><button>Find Out More</button></a>
-    </div>
-    <!-- //donate -->
-    <div>
-      <form action="https://www.paypal.com/donate" method="post" target="_top">
-        <input type="hidden" name="hosted_button_id" value="ZTQ5RKXFNFB26" />
-        <input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_SM.gif" border="0" name="submit"
-          title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+          <a href="https://effectuall.github.io/" target="_blank"><button>Find Out More</button></a>
+        </div>
+        <!-- //donate -->
+        <div>
+          <form action="https://www.paypal.com/donate" method="post" target="_top">
+            <input type="hidden" name="hosted_button_id" value="ZTQ5RKXFNFB26" />
+            <input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_SM.gif" border="0"
+              name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
 
-      </form>
-    </div>
-  </div>
-  <div id="scene" class="scene">
-    <div id="info"> Toggle Buttons<br>
-      <button id="labels">Labels</button>
-      <button id="rays">Ray Diagram</button>
-    </div>
-
-    <div id="container">
-      <div id="menu">
-        <div id="part"> </div>
-        <div id="describe"> </div>
-      </div>
-    </div>
-  </div>
-  <div id="content" style="text-align: center; font-weight:lighter;" >
-    <div id="Simulations">
-    <div>
-      <h1 style="font-size: 26px; text-transform: uppercase;">Compound Microscope </h1><h3> Interactive 3D Simulations</h3>
-      <p>
-        USE MOUSE
-        <li>
-          to zoom and pan around in the 3D space
-        </li>
-        <li>
-          to click for the microscope parts description
-        </li>
-      </p>
-    </div>
-
-
+          </form>
+        </div>
   
-      <div>
-        <h1 style="font-size: 26px; text-transform: uppercase;">List of Interactive 3D Physics Simulations</h1>
 
-        <div id="sims">
+  <!-- Add a simpler button:
+    Simple button that will open the modal.
+  -->
+  <div ><button data-netlify-identity-button style="background: rgb(12, 63, 71);"></button></div>
+      </div>
+
+
+      <div id="scene" class="scene">
+        <div id="info"> Toggle Buttons<br>
+          <button id="labels">Labels</button>
+          <button id="rays">Ray Diagram</button>
+        </div>
+
+        <div id="container">
+          <div id="menu">
+            <div id="part"> </div>
+            <div id="describe"> </div>
+          </div>
+        </div>
+      </div>
+      <div id="content" style="text-align: center; font-weight:lighter;">
+        <div id="Simulations">
+          <div>
+            <h1 style="font-size: 26px; text-transform: uppercase;">Compound Microscope </h1>
+            <h3> Interactive 3D Simulations</h3>
+            <p>
+              USE MOUSE
+              <li>
+                to zoom and pan around in the 3D space
+              </li>
+              <li>
+                to click for the microscope parts description
+              </li>
+            </p>
+          </div>
+
+
+
+          <div>
+            <h1 style="font-size: 26px; text-transform: uppercase;">List of Interactive 3D Physics Simulations</h1>
+
+            <div id="sims">
+
+            </div>
+          </div>
+
+        </div>
+
+        <div id="part1" class="content">
+          <h2>Working Principle of a Compound Microscope </h2>
+
+          <p>Optical system of a microscope includes</p>
+          <dl>
+            <li>Objective lens</li>
+            <li>Eyepieces</li>
+          </dl><br>
+          <p>
+            During observation, specimen (object) is placed near the focal plane of the objective lens and a
+            magnified real image of the specimen is first created near the focal plane of the eyepiece.
+            Eyepiece then acts as a magnifier to further magnify the image. Finally a magnified, virtual, inverted image
+            is
+            seen by the observer.
+          </p>
+          <dl style="list-style-type:square;">
+            <li>
+              Compound Microscope forms a virtual, magnified and inverted image.
+            </li>
+          </dl>
+
+        </div>
+        <div id="part2" class="content">
+
+          <h2>Magnification of a Microscope</h2>
+          <p>In a microscope, each lens produces a magnification that multipies the height of the image
+            (enlarges the image). It is apparent that the overall magnification, \(m\) of the microscope is
+            the product of the individual <a
+              href="https://openstax.org/books/college-physics/pages/26-4-microscopes">magnifications</a>:
+            $$ m = m_{o}m_{e} $$
+
+            where \(m_{o} \) is the magnification of the objective and \(m_{e} \) is the
+            magnification of the eyepiece.
+
+            Both objective and eyepiece contribute to the overall magnification.
+
+          </p>
+
+          <dl>
+            <dt>
+              <h3>Magnification of a microscope,</h3> \[\boldsymbol{m = m_{o}m_{e}} \]
+            </dt>
+          </dl>
+
+
+        </div>
+        <div id="part3" class="content">
+
+          <h2>Resolution of a Microscope </h2>
+          <p>
+            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/mid/NIHMS363450/"> Resolution of a microscope</a> is its
+            ability to clearly magnify two closeby objects.
+            The spatial resolution of a well designed optical microscope is mainly determined
+            by its objective lens and
+            is given by the Rayleigh equation as follows;
+            $$\Delta r_{0} = 0.62 \frac{\lambda }{n \sin \alpha}$$
+            where (\(\lambda\)), is the wavelength of the light source; \(n\)
+            is the refractive index of the medium between the specimen and the lens, \(\alpha\) is half-angle
+            aperature and \(n \sin \alpha\) is the numerical aperature (NA) of the objective lens.
+          </p>
+          <p>
+          <dl>
+            <dt>
+              <h3> For a microscope of given numeric aperature, NA, resolution depends on \(\lambda\) and \(n\)
+              </h3>
+            </dt>
+          </dl>
+          </p>
+          <h3> Practical limitations of a light microscope</h3>
+          <ul style="list-style-type:circle;">
+            <li>Use of visible light with the wavelength between 390 nm and 790 nm. </li>
+            <li>Maximum reachable aperature with the haif-angle of 70-75 degree.</li>
+            <li>Requirement to use immersion methods with water or oil to increase the refractive index.</li>
+          </ul>
+          <dl>
+            <dt>
+              Resolution of a conventional light microscope cannot exceed 200 nm.</strong>
+            </dt>
+          </dl>
+
+        </div>
+        <div id="part4" class="content">
+
+          <h2>Electron Microscope</h2>
+          <p>As the wavelength of electronic beam is much shorter than the visible light in several orders of magnitude,
+            the resolution of a microscope using electronic beam can reach \(\sim 0.3\) nm.
+
+            For this reason, electron microscope build on the principles of electronic optics, has very high
+            magnification
+            power and can image the fine structures of objects.
+          </p>
+          <h3>Comparison of resolution</h3>
+          <ul style="list-style-type:none;">
+            <li>&#10148; <strong> Eye \(\sim 0.1\) mm,</strong> </li>
+            <li>&#10148; <strong> Light microscope \(\sim 0.2\) &#181;m,</strong></li>
+            <li>&#10148; <strong> Electron microscope \(\sim 0.3\) nm. </strong> </li>
+          </ul>
+
+        </div>
+        <div class="content" id="aboutUs">
+          <h2> About Me</h2>
+          <p>All of the simulations in this site are created by me, <a href="mailto:effectuallearning@gmail.com">E.P
+              Sajitha</a>. Please send feedback about the simulation contents, visualisations
+            or suggestions for new simulations and consider supporting me.</p>
+          <p>The ensemble of Physics Interactive Simulations in 3D are developed using open source Three.js-JavaScript
+            3D Library.</p>
+
+          <a><strong>Three.js</strong> is a cross-browser JavaScript library and application programming interface used
+            to
+            create and
+            display animated 3D computer graphics in a web browser using WebGL. The source code is hosted in a
+            repository on GitHub. Three.js allows the creation of graphical processing unit (GPU)-accelerated 3D
+            animations using the JavaScript language</a>
+          <div class="aSide" id="popup">
+
+            <h2>Lets get in touch. Send me a message: </h2>
+            <a href="mailto:effectuallearning@gmail.com">SEND MESSAGE</a><br>
+            <a href="https://www.youtube.com/channel/UCFSMjn_YssD7Y1ybBwZb3mw"> Subscribe Here for the Youtube
+              Channel</a><br>
+
+            <form action="https://www.paypal.com/donate" method="post" target="_top">
+              <input type="hidden" name="hosted_button_id" value="ZTQ5RKXFNFB26" />
+              <input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_SM.gif" border="0"
+                name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+
+            </form>
+          </div>
+
 
         </div>
       </div>
 
-    </div>
+      <div style="text-align: center; font-weight:lighter;" id="counterCard">
 
-    <div id="part1" class="content">
-      <h2>Working Principle of a Compound Microscope </h2>
-
-      <p>Optical system of a microscope includes</p>
-      <dl>
-        <li>Objective lens</li>
-        <li>Eyepieces</li>
-      </dl><br>
-      <p>
-      During observation, specimen (object) is placed near the focal plane of the objective lens and a
-      magnified real image of the specimen is first created near the focal plane of the eyepiece.
-      Eyepiece then acts as a magnifier to further magnify the image. Finally a magnified, virtual, inverted image is
-      seen by the observer.
-    </p>
-      <dl style="list-style-type:square;">
-        <li>
-         Compound Microscope forms a virtual, magnified and inverted image.
-        </li>
-      </dl>
-
-    </div>
-    <div id="part2" class="content">
-
-      <h2>Magnification of a Microscope</h2>
-      <p>In a microscope, each lens produces a magnification that multipies the height of the image
-        (enlarges the image). It is apparent that the overall magnification, \(m\) of the microscope is
-        the product of the individual <a
-          href="https://openstax.org/books/college-physics/pages/26-4-microscopes">magnifications</a>:
-        $$ m = m_{o}m_{e} $$
-
-        where \(m_{o} \) is the magnification of the objective and \(m_{e} \) is the
-        magnification of the eyepiece.
-
-        Both objective and eyepiece contribute to the overall magnification.
-
-      </p>
-
-      <dl>
-        <dt>
-         <h3>Magnification of a microscope,</h3>  \[\boldsymbol{m = m_{o}m_{e}} \]
-        </dt>
-      </dl>
+        _________________________________________
 
 
-    </div>
-    <div id="part3" class="content">
 
-      <h2>Resolution of a Microscope </h2>
-      <p>
-        <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/mid/NIHMS363450/"> Resolution of a microscope</a> is its
-        ability to clearly magnify two closeby objects.
-        The spatial resolution of a well designed optical microscope is mainly determined
-        by its objective lens and
-        is given by the Rayleigh equation as follows;
-        $$\Delta r_{0} = 0.62 \frac{\lambda }{n \sin \alpha}$$
-        where (\(\lambda\)), is the wavelength of the light source; \(n\)
-        is the refractive index of the medium between the specimen and the lens, \(\alpha\) is half-angle
-        aperature and \(n \sin \alpha\) is the numerical aperature (NA) of the objective lens.
-      </p>
-    <p>
-      <dl>
-        <dt>
-          <h3> For a microscope of given numeric aperature, NA, resolution depends on \(\lambda\) and \(n\)
-            </h3>
-        </dt>
-      </dl>
-    </p>
-      <h3> Practical limitations of a light microscope</h3>
-      <ul style="list-style-type:circle;">
-        <li>Use of visible light with the wavelength between 390 nm and 790 nm. </li>
-        <li>Maximum reachable aperature with the haif-angle of 70-75 degree.</li>
-        <li>Requirement to use immersion methods with water or oil to increase the refractive index.</li>
-      </ul>
-      <dl>
-        <dt>
-        Resolution of a conventional light microscope cannot exceed 200 nm.</strong>
-        </dt>
-      </dl>
-
-    </div>
-    <div id="part4" class="content">
-
-      <h2>Electron Microscope</h2>
-      <p>As the wavelength of electronic beam is much shorter than the visible light in several orders of magnitude,
-        the resolution of a microscope using electronic beam can reach \(\sim 0.3\) nm.
-
-        For this reason, electron microscope build on the principles of electronic optics, has very high magnification
-        power and can image the fine structures of objects.
-      </p>
-      <h3>Comparison of resolution</h3>
-      <ul style="list-style-type:none;">
-        <li>&#10148; <strong> Eye \(\sim 0.1\) mm,</strong> </li>
-        <li>&#10148; <strong> Light microscope \(\sim 0.2\) &#181;m,</strong></li>
-        <li>&#10148; <strong> Electron microscope \(\sim 0.3\) nm. </strong> </li>
-      </ul>
-
-    </div>
-    <div class="content" id="aboutUs">
-      <h2> About Me</h2>
-      <p>All of the simulations in this site are created by me, <a href="mailto:effectuallearning@gmail.com">E.P
-        Sajitha</a>. Please send feedback about the simulation contents, visualisations
-      or suggestions for new simulations and consider supporting me.</p>
-      <p>The ensemble of Physics Interactive Simulations in 3D are developed using open source Three.js-JavaScript
-        3D Library.</p>
-
-      <a><strong>Three.js</strong> is a cross-browser JavaScript library and application programming interface used to
-        create and
-        display animated 3D computer graphics in a web browser using WebGL. The source code is hosted in a
-        repository on GitHub. Three.js allows the creation of graphical processing unit (GPU)-accelerated 3D
-        animations using the JavaScript language</a>
-      <div class="aSide" id="popup">
-
-        <h2>Lets get in touch. Send me a message: </h2>
-        <a href="mailto:effectuallearning@gmail.com">SEND MESSAGE</a><br>
-        <a href="https://www.youtube.com/channel/UCFSMjn_YssD7Y1ybBwZb3mw"> Subscribe Here for the Youtube
-          Channel</a><br>
-
-        <form action="https://www.paypal.com/donate" method="post" target="_top">
-          <input type="hidden" name="hosted_button_id" value="ZTQ5RKXFNFB26" />
-          <input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_SM.gif" border="0" name="submit"
-            title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-
-        </form>
+        <p id="footer"></p>
+        <p id="email"></p>
       </div>
-
-
     </div>
-  </div>
-
-  <div style="text-align: center; font-weight:lighter;" id="counterCard">
-  
-    _________________________________________
-   
-
-
-    <p id="footer"></p>
-    <p id="email"></p>
-  </div>
-</div>
-  <!-- //scroll to view + responsive header -->
- 
+    <!-- //scroll to view + responsive header -->
 
     <script src="footer.js"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
     <script>
+
       function myIndex() {
-           let X = document.getElementById("logo");
-           console.log(X,location.host)
-           X.src = '/index.html'
-           window.location.src = '/#home'
-         }
-     
-     
-         function myHome() {
-           let X = document.getElementById("app");
-     
-           X.scrollIntoView({ behavior: "smooth"});
-         }
-     
-         function aboutUs() {
-           let X = document.getElementById("aboutUs");
-     
-           X.scrollIntoView({ behavior: "smooth" });
-         }
-     
-         function mySims() {
-           let X = document.getElementById("Simulations");
-     
-           X.scrollIntoView({ behavior: "smooth" });
-         }
-     
-         const hamburger = document.querySelector(".hamburger");
-const navLinks = document.querySelector(".nav-links");
-const link = document.querySelectorAll(".nav-links li");
+        let X = document.getElementById("logo");
+        console.log(X, location.host)
+        X.src = '/index.html'
+        window.location.src = '/#home'
+      }
 
-hamburger.addEventListener('click', ()=>{
-   //Links
-    navLinks.classList.toggle("open");
-    link.forEach(link => {
-        link.classList.toggle("fade");
-    });
 
-    //Animation
-    hamburger.classList.toggle("toggle");
-});
+      function myHome() {
+        let X = document.getElementById("app");
 
-       </script>
-     
-     <!-- tween animation -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/20.0.0/tween.umd.js"></script>
- 
+        X.scrollIntoView({ behavior: "smooth" });
+      }
 
-  <!-- //create menu for other simulations -->
-  
- 
-  
+      function aboutUs() {
+        let X = document.getElementById("aboutUs");
+
+        X.scrollIntoView({ behavior: "smooth" });
+      }
+
+      function mySims() {
+        let X = document.getElementById("Simulations");
+
+        X.scrollIntoView({ behavior: "smooth" });
+      }
+
+      const hamburger = document.querySelector(".hamburger");
+      const navLinks = document.querySelector(".nav-links");
+      const link = document.querySelectorAll(".nav-links li");
+
+      hamburger.addEventListener('click', () => {
+        //Links
+        navLinks.classList.toggle("open");
+        link.forEach(link => {
+          link.classList.toggle("fade");
+        });
+
+        //Animation
+        hamburger.classList.toggle("toggle");
+      });
+
+    </script>
+  <!-- <script src="app.js"></script> -->
+    <!-- tween animation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/20.0.0/tween.umd.js"></script>
+
+
+    <!-- //create menu for other simulations -->
+    
+
+    
 </body>
 
 </html>
