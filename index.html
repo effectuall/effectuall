@@ -45,8 +45,10 @@
         <div class="bars3"></div>
       </div>
       <ul class="nav-links">
+        <li><a href="problems.html">Problems</a></li>
+        <li><a href="sims.html">Simulations</a></li>
         <li><a href="#Simulations">3D Interactive</a></li>
-        <!-- <li><a href="./admin/">Projects</a></li> -->
+        <li><a href="/admin/index.html">Home</a></li>
         <li><a href="#aboutUs">Contact Us</a></li>
         <li><button id="signbtn" class="login-button" href="#" data-netlify-identity-button></button></li>
       </ul>
@@ -320,7 +322,7 @@
         window.netlifyIdentity.on("init", user => {
           if (!user) {
             window.netlifyIdentity.on("login", () => {
-              document.location.href = "/admin/index.html";
+              document.location.href = "/admin/";
             });
           }
         });
