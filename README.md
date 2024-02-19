@@ -1,7 +1,7 @@
 - 👋 Hi, I’m E P Sajitha @effectuall
 - 👀 I’m interested in interactive 3D simulations
 - 🌱 I’m currently learning Three.js 
-- 💞️ I’m looking to collaborate on 3D Simulation
+- 💞️ I’m looking to collaborate on interactive learning modules.
 - 📫 How to reach me email: effectuallearning@gmail.com
 - 🚧 https://effectuall.com/ 
 
