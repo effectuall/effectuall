@@ -1,6 +1,6 @@
-- 👋 Hi, I’m E P Sajitha @effectuall
+- 👋 Hi, I’m E P Sajitha, Founder of Effectual Learning @effectuall
 - 👀 I’m interested in interactive 3D simulations
-- 🌱 I’m currently learning Three.js 
+- 🌱 I’m currently working with Three.js & using for STEM learning.
 - 💞️ I’m looking to collaborate on interactive learning modules.
 - 📫 How to reach me email: effectuallearning@gmail.com
 - 🚧 https://effectuall.com/ 
